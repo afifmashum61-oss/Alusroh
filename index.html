@@ -62,47 +62,49 @@
 </head>
 <body class="min-h-screen flex flex-col antialiased selection:bg-[#0B4F37] selection:text-white">
 
-  <!-- TOP HEADER / NAVBAR -->
-  <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E4D9]">
+  <!-- TOP HEADER / NAVBAR WITH LEFT HAMBURGER BUTTON -->
+  <header class="sticky top-0 z-40 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E4D9]">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-20">
         
-        <!-- Logo & Title -->
-        <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('beranda')">
-          <div class="w-11 h-11 rounded-xl bg-brand-dark flex items-center justify-center text-white font-bold text-xl shadow-md">
-            <i class="fa-solid fa-people-roof"></i>
-          </div>
-          <div>
-            <span class="text-xs font-bold tracking-wider text-brand-dark uppercase block">Media Pembelajaran Interaktif</span>
-            <h1 class="text-xl font-extrabold text-[#0B4F37] tracking-tight font-arabic flex items-center gap-2">
-              الأسرة <span class="text-xs font-normal text-brand-muted font-sans">(Keluarga)</span>
-            </h1>
+        <!-- Left Section: Left Hamburger Button + Brand Title -->
+        <div class="flex items-center gap-3.5">
+          <!-- HAMBURGER BUTTON (LEFT SIDE) -->
+          <button onclick="openSidebarMenu()" aria-label="Buka Menu Navigasi" class="w-11 h-11 rounded-2xl bg-[#EFECE4] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-all shadow-xs border border-[#E0DBCF]">
+            <i class="fa-solid fa-bars text-lg"></i>
+          </button>
+          
+          <!-- Logo & Title -->
+          <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('beranda')">
+            <div class="w-11 h-11 rounded-xl bg-brand-dark flex items-center justify-center text-white font-bold text-xl shadow-md">
+              <i class="fa-solid fa-people-roof"></i>
+            </div>
+            <div>
+              <span class="text-xs font-bold tracking-wider text-brand-dark uppercase block">Media Pembelajaran Interaktif</span>
+              <h1 class="text-xl font-extrabold text-[#0B4F37] tracking-tight font-arabic flex items-center gap-2">
+                الأسرة <span class="text-xs font-normal text-brand-muted font-sans">(Keluarga)</span>
+              </h1>
+            </div>
           </div>
         </div>
 
-        <!-- Desktop Navigation Tabs -->
-        <nav class="hidden md:flex items-center gap-1 bg-[#EFECE4] p-1.5 rounded-full border border-[#E2DDD0]">
-          <button id="nav-beranda" onclick="switchTab('beranda')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-brand-dark text-white shadow-sm">
-            <i class="fa-solid fa-house mr-1.5"></i> Beranda
+        <!-- Quick Navigation Pills (Desktop Short Visual Indicators) -->
+        <div class="hidden md:flex items-center gap-2">
+          <button onclick="switchTab('mufradat')" class="px-3.5 py-1.5 rounded-full bg-white hover:bg-brand-light-green border border-[#E0DBCF] text-xs font-bold text-brand-dark transition-all">
+            <i class="fa-solid fa-book-bookmark text-emerald-700 mr-1"></i> Mufradat (60)
           </button>
-          <button id="nav-mufradat" onclick="switchTab('mufradat')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
-            <i class="fa-solid fa-book-bookmark mr-1.5"></i> Mufradat <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">60</span>
+          <button onclick="switchTab('hiwar')" class="px-3.5 py-1.5 rounded-full bg-white hover:bg-brand-light-green border border-[#E0DBCF] text-xs font-bold text-brand-dark transition-all">
+            <i class="fa-solid fa-comments text-amber-700 mr-1"></i> Hiwar (3)
           </button>
-          <button id="nav-hiwar" onclick="switchTab('hiwar')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
-            <i class="fa-solid fa-comments mr-1.5"></i> Hiwar
+          <button onclick="switchTab('tadrib-mufradat')" class="px-3.5 py-1.5 rounded-full bg-white hover:bg-brand-light-green border border-[#E0DBCF] text-xs font-bold text-brand-dark transition-all">
+            <i class="fa-solid fa-pen-ruler text-teal-700 mr-1"></i> Tadrib (60)
           </button>
-          <button id="nav-tadrib-mufradat" onclick="switchTab('tadrib-mufradat')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
-            <i class="fa-solid fa-pen-ruler mr-1.5"></i> Tadrib Mufradat <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">30</span>
-          </button>
-          <button id="nav-tadrib-hiwar" onclick="switchTab('tadrib-hiwar')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
-            <i class="fa-solid fa-list-check mr-1.5"></i> Tadrib Hiwar <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">30</span>
-          </button>
-        </nav>
+        </div>
 
         <!-- Right Owner Identity & Score Badge -->
-        <div class="hidden lg:flex items-center gap-3">
+        <div class="flex items-center gap-3">
           <!-- Owner Badge -->
-          <div class="flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-full border border-[#E0DBCF] shadow-sm text-xs">
+          <div class="hidden sm:flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-full border border-[#E0DBCF] shadow-sm text-xs">
             <div class="w-7 h-7 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-xs">
               <i class="fa-solid fa-user-graduate"></i>
             </div>
@@ -112,39 +114,107 @@
             </div>
           </div>
 
-          <div class="flex items-center gap-2 bg-brand-light-green px-3.5 py-1.5 rounded-full border border-[#D0E2DA] text-xs font-medium text-brand-dark">
+          <!-- Total Score Badge -->
+          <div class="flex items-center gap-2 bg-brand-light-green px-3.5 py-1.5 rounded-full border border-[#D0E2DA] text-xs font-medium text-brand-dark shadow-xs">
             <i class="fa-solid fa-trophy text-amber-600"></i>
             <span>Skor: <strong id="global-score-badge">0</strong> / 100</span>
           </div>
         </div>
 
-        <!-- Mobile Menu Toggle Button -->
-        <button onclick="toggleMobileMenu()" class="md:hidden text-brand-dark p-2 text-xl focus:outline-none">
-          <i class="fa-solid fa-bars"></i>
-        </button>
-
       </div>
     </div>
+  </header>
 
-    <!-- Mobile Navigation Drawer -->
-    <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F5] border-b border-[#E8E4D9] px-4 pt-2 pb-4 space-y-2">
-      <!-- Owner Mobile Card -->
-      <div class="p-3 bg-white rounded-xl border border-[#E8E4D9] flex items-center gap-3 mb-2">
-        <div class="w-9 h-9 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold">
+
+  <!-- ==================== LEFT SIDEBAR HAMBURGER DRAWER ==================== -->
+  <!-- Backdrop Overlay -->
+  <div id="sidebar-backdrop" onclick="closeSidebarMenu()" class="fixed inset-0 bg-black/40 backdrop-blur-xs z-50 hidden transition-opacity duration-300 opacity-0"></div>
+
+  <!-- Left Sidebar Drawer -->
+  <aside id="sidebar-drawer" class="fixed top-0 left-0 h-full w-80 sm:w-84 bg-[#FAF8F5] border-r border-[#E8E4D9] z-50 shadow-2xl transition-transform duration-300 -translate-x-full flex flex-col justify-between overflow-y-auto">
+    
+    <!-- Top Header of Drawer -->
+    <div class="p-6 border-b border-[#E8E4D9] bg-white">
+      <div class="flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-dark flex items-center justify-center text-white font-bold text-lg shadow-sm">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <div>
+            <h2 class="font-extrabold text-brand-dark text-lg font-arabic leading-tight">دَرْسُ الأُسْرَةِ</h2>
+            <p class="text-xs font-semibold text-brand-muted">Navigasi Pembelajaran</p>
+          </div>
+        </div>
+        <button onclick="closeSidebarMenu()" class="w-9 h-9 rounded-full bg-[#EFECE4] hover:bg-rose-100 hover:text-rose-700 text-brand-dark flex items-center justify-center transition-colors">
+          <i class="fa-solid fa-xmark text-base"></i>
+        </button>
+      </div>
+
+      <!-- Owner Credit Card in Drawer -->
+      <div class="mt-5 p-3.5 bg-brand-light-green/60 rounded-2xl border border-[#D5E6DF] flex items-center gap-3">
+        <div class="w-9 h-9 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-xs shadow-xs">
           <i class="fa-solid fa-user-graduate"></i>
         </div>
         <div>
           <h4 class="text-xs font-bold text-brand-dark">Erliana, S.Pd.I</h4>
-          <p class="text-[11px] text-brand-muted">MAN 4 Aceh Besar</p>
+          <p class="text-[10px] text-brand-muted font-medium">MAN 4 Aceh Besar</p>
         </div>
       </div>
-      <button onclick="switchTab('beranda')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm bg-brand-dark text-white">Beranda</button>
-      <button onclick="switchTab('mufradat')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Mufradat (60 Kosakata)</button>
-      <button onclick="switchTab('hiwar')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Hiwar (3 Percakapan)</button>
-      <button onclick="switchTab('tadrib-mufradat')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Tadrib Mufradat (30 Soal)</button>
-      <button onclick="switchTab('tadrib-hiwar')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Tadrib Hiwar (30 Soal)</button>
     </div>
-  </header>
+
+    <!-- Navigation Menu Items inside Drawer -->
+    <div class="p-4 flex-grow space-y-2.5">
+      <span class="text-[10px] font-bold text-brand-muted uppercase tracking-wider px-3 block mb-1">Menu Utama Pembelajaran</span>
+      
+      <button id="side-nav-beranda" onclick="switchTab('beranda')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm bg-brand-dark text-white shadow-sm transition-all">
+        <div class="flex items-center gap-3.5">
+          <i class="fa-solid fa-house w-5 text-center text-emerald-300"></i>
+          <span>Beranda Utama</span>
+        </div>
+        <i class="fa-solid fa-chevron-right text-xs opacity-60"></i>
+      </button>
+
+      <button id="side-nav-mufradat" onclick="switchTab('mufradat')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
+        <div class="flex items-center gap-3.5">
+          <i class="fa-solid fa-book-bookmark w-5 text-center text-emerald-700"></i>
+          <span>Mufradat (Kosakata)</span>
+        </div>
+        <span class="bg-brand-dark text-white text-xs px-2.5 py-0.5 rounded-full font-sans font-bold">60</span>
+      </button>
+
+      <button id="side-nav-hiwar" onclick="switchTab('hiwar')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
+        <div class="flex items-center gap-3.5">
+          <i class="fa-solid fa-comments w-5 text-center text-amber-700"></i>
+          <span>Hiwar (Percakapan)</span>
+        </div>
+        <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-0.5 rounded-full font-sans font-semibold">3 Modul</span>
+      </button>
+
+      <button id="side-nav-tadrib-mufradat" onclick="switchTab('tadrib-mufradat')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
+        <div class="flex items-center gap-3.5">
+          <i class="fa-solid fa-pen-ruler w-5 text-center text-teal-700"></i>
+          <span>Tadrib Mufradat</span>
+        </div>
+        <span class="bg-emerald-100 text-emerald-900 text-xs px-2.5 py-0.5 rounded-full font-sans font-semibold">30 Soal</span>
+      </button>
+
+      <button id="side-nav-tadrib-hiwar" onclick="switchTab('tadrib-hiwar')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
+        <div class="flex items-center gap-3.5">
+          <i class="fa-solid fa-list-check w-5 text-center text-indigo-700"></i>
+          <span>Tadrib Hiwar</span>
+        </div>
+        <span class="bg-amber-100 text-amber-900 text-xs px-2.5 py-0.5 rounded-full font-sans font-semibold">30 Soal</span>
+      </button>
+    </div>
+
+    <!-- Bottom Footer of Drawer -->
+    <div class="p-5 border-t border-[#E8E4D9] bg-white">
+      <div class="flex items-center justify-between text-xs text-brand-muted">
+        <span>Pencapaian Skor Total</span>
+        <span class="font-bold text-brand-dark"><strong id="drawer-score-badge">0</strong> / 100</span>
+      </div>
+    </div>
+  </aside>
 
 
   <!-- MAIN CONTENT CONTAINER -->
@@ -756,30 +826,48 @@
       renderTadribHiwar();
     });
 
+    // ==================== SIDEBAR HAMBURGER CONTROLS ====================
+    function openSidebarMenu() {
+      const drawer = document.getElementById("sidebar-drawer");
+      const backdrop = document.getElementById("sidebar-backdrop");
+      
+      backdrop.classList.remove("hidden");
+      setTimeout(() => {
+        backdrop.classList.remove("opacity-0");
+        drawer.classList.remove("-translate-x-full");
+      }, 10);
+    }
+
+    function closeSidebarMenu() {
+      const drawer = document.getElementById("sidebar-drawer");
+      const backdrop = document.getElementById("sidebar-backdrop");
+
+      drawer.classList.add("-translate-x-full");
+      backdrop.classList.add("opacity-0");
+      setTimeout(() => {
+        backdrop.classList.add("hidden");
+      }, 300);
+    }
+
     // ==================== TAB NAVIGATION ====================
     function switchTab(tabId) {
       document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
       document.getElementById(`tab-${tabId}`).classList.remove("hidden");
 
-      document.querySelectorAll(".nav-btn").forEach(btn => {
+      // Update sidebar nav active styling
+      document.querySelectorAll(".side-nav-btn").forEach(btn => {
         btn.classList.remove("bg-brand-dark", "text-white", "shadow-sm");
-        btn.classList.add("text-brand-muted");
+        btn.classList.add("text-brand-dark", "hover:bg-brand-light-green");
       });
 
-      const activeNavBtn = document.getElementById(`nav-${tabId}`);
-      if (activeNavBtn) {
-        activeNavBtn.classList.add("bg-brand-dark", "text-white", "shadow-sm");
-        activeNavBtn.classList.remove("text-brand-muted");
+      const activeSideBtn = document.getElementById(`side-nav-${tabId}`);
+      if (activeSideBtn) {
+        activeSideBtn.classList.add("bg-brand-dark", "text-white", "shadow-sm");
+        activeSideBtn.classList.remove("text-brand-dark", "hover:bg-brand-light-green");
       }
 
-      // Close mobile menu if open
-      document.getElementById("mobile-menu").classList.add("hidden");
+      closeSidebarMenu();
       window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function toggleMobileMenu() {
-      const menu = document.getElementById("mobile-menu");
-      menu.classList.toggle("hidden");
     }
 
     // ==================== AUDIO PRONUNCIATION (SPEECH SYNTHESIS) ====================
@@ -1055,6 +1143,8 @@
     function updateGlobalScore() {
       const avg = Math.round((scoreMufradat + scoreHiwar) / 2);
       document.getElementById("global-score-badge").innerText = avg;
+      const drawerScore = document.getElementById("drawer-score-badge");
+      if (drawerScore) drawerScore.innerText = avg;
     }
 
     function resetTadribMufradat() {
