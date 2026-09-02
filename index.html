@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأسرة - Media Pembelajaran Interaktif Bahasa Arab | Erliana, S.Pd.I (MAN 4 Aceh Besar)</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://www.gstatic.com/antigravity/web/dev/tailwindcss.min.js"></script>
+  
+  <!-- Google Fonts: Amiri & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: #FAF8F5;
+      color: #1A2E26;
+    }
+    .font-arabic {
+      font-family: 'Amiri', 'Scheherazade New', serif;
+      line-height: 2.3 !important;
+    }
+    /* AI Foundry Modern Color Theme */
+    .bg-brand-dark { background-color: #0B4F37; }
+    .bg-brand-dark-hover:hover { background-color: #073B28; }
+    .text-brand-dark { color: #0B4F37; }
+    .border-brand-dark { border-color: #0B4F37; }
+    
+    .bg-brand-cream { background-color: #FAF8F5; }
+    .bg-brand-surface { background-color: #FFFFFF; }
+    .bg-brand-light-green { background-color: #EBF4F0; }
+    .text-brand-muted { color: #52665E; }
+    
+    .shadow-soft {
+      box-shadow: 0 4px 20px -2px rgba(11, 79, 55, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.02);
+    }
+    
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #C4D6CD;
+      border-radius: 999px;
+    }
+    
+    /* Animation classes */
+    .fade-in {
+      animation: fadeIn 0.3s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col antialiased selection:bg-[#0B4F37] selection:text-white">
+
+  <!-- TOP HEADER / NAVBAR -->
+  <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-[#E8E4D9]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        
+        <!-- Logo & Title -->
+        <div class="flex items-center gap-3 cursor-pointer" onclick="switchTab('beranda')">
+          <div class="w-11 h-11 rounded-xl bg-brand-dark flex items-center justify-center text-white font-bold text-xl shadow-md">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <div>
+            <span class="text-xs font-bold tracking-wider text-brand-dark uppercase block">Media Pembelajaran Interaktif</span>
+            <h1 class="text-xl font-extrabold text-[#0B4F37] tracking-tight font-arabic flex items-center gap-2">
+              الأسرة <span class="text-xs font-normal text-brand-muted font-sans">(Keluarga)</span>
+            </h1>
+          </div>
+        </div>
+
+        <!-- Desktop Navigation Tabs -->
+        <nav class="hidden md:flex items-center gap-1 bg-[#EFECE4] p-1.5 rounded-full border border-[#E2DDD0]">
+          <button id="nav-beranda" onclick="switchTab('beranda')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold transition-all bg-brand-dark text-white shadow-sm">
+            <i class="fa-solid fa-house mr-1.5"></i> Beranda
+          </button>
+          <button id="nav-mufradat" onclick="switchTab('mufradat')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
+            <i class="fa-solid fa-book-bookmark mr-1.5"></i> Mufradat <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">60</span>
+          </button>
+          <button id="nav-hiwar" onclick="switchTab('hiwar')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
+            <i class="fa-solid fa-comments mr-1.5"></i> Hiwar
+          </button>
+          <button id="nav-tadrib-mufradat" onclick="switchTab('tadrib-mufradat')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
+            <i class="fa-solid fa-pen-ruler mr-1.5"></i> Tadrib Mufradat <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">30</span>
+          </button>
+          <button id="nav-tadrib-hiwar" onclick="switchTab('tadrib-hiwar')" class="nav-btn px-5 py-2 rounded-full text-sm font-semibold text-brand-muted hover:text-brand-dark transition-all">
+            <i class="fa-solid fa-list-check mr-1.5"></i> Tadrib Hiwar <span class="ml-1 text-xs bg-[#D8E6E0] text-brand-dark px-2 py-0.5 rounded-full">30</span>
+          </button>
+        </nav>
+
+        <!-- Right Owner Identity & Score Badge -->
+        <div class="hidden lg:flex items-center gap-3">
+          <!-- Owner Badge -->
+          <div class="flex items-center gap-2.5 bg-white px-3.5 py-1.5 rounded-full border border-[#E0DBCF] shadow-sm text-xs">
+            <div class="w-7 h-7 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold text-xs">
+              <i class="fa-solid fa-user-graduate"></i>
+            </div>
+            <div class="text-left leading-tight">
+              <span class="font-bold text-brand-dark block">Erliana, S.Pd.I</span>
+              <span class="text-[10px] text-brand-muted block">MAN 4 Aceh Besar</span>
+            </div>
+          </div>
+
+          <div class="flex items-center gap-2 bg-brand-light-green px-3.5 py-1.5 rounded-full border border-[#D0E2DA] text-xs font-medium text-brand-dark">
+            <i class="fa-solid fa-trophy text-amber-600"></i>
+            <span>Skor: <strong id="global-score-badge">0</strong> / 100</span>
+          </div>
+        </div>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button onclick="toggleMobileMenu()" class="md:hidden text-brand-dark p-2 text-xl focus:outline-none">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-menu" class="hidden md:hidden bg-[#FAF8F5] border-b border-[#E8E4D9] px-4 pt-2 pb-4 space-y-2">
+      <!-- Owner Mobile Card -->
+      <div class="p-3 bg-white rounded-xl border border-[#E8E4D9] flex items-center gap-3 mb-2">
+        <div class="w-9 h-9 rounded-full bg-brand-dark text-white flex items-center justify-center font-bold">
+          <i class="fa-solid fa-user-graduate"></i>
+        </div>
+        <div>
+          <h4 class="text-xs font-bold text-brand-dark">Erliana, S.Pd.I</h4>
+          <p class="text-[11px] text-brand-muted">MAN 4 Aceh Besar</p>
+        </div>
+      </div>
+      <button onclick="switchTab('beranda')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm bg-brand-dark text-white">Beranda</button>
+      <button onclick="switchTab('mufradat')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Mufradat (60 Kosakata)</button>
+      <button onclick="switchTab('hiwar')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Hiwar (3 Percakapan)</button>
+      <button onclick="switchTab('tadrib-mufradat')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Tadrib Mufradat (30 Soal)</button>
+      <button onclick="switchTab('tadrib-hiwar')" class="w-full text-left px-4 py-2.5 rounded-xl font-semibold text-sm text-brand-dark hover:bg-brand-light-green">Tadrib Hiwar (30 Soal)</button>
+    </div>
+  </header>
+
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- ==================== TAB 1: BERANDA ==================== -->
+    <section id="tab-beranda" class="tab-content fade-in space-y-12">
+      
+      <!-- Hero Banner -->
+      <div class="relative rounded-3xl bg-gradient-to-b from-[#F2EFE7] to-[#FAF8F5] border border-[#E6E2D6] p-8 sm:p-12 overflow-hidden shadow-soft">
+        
+        <!-- Floating Avatar Decorative Badges -->
+        <div class="hidden lg:block absolute top-10 right-16 bg-white p-3.5 rounded-2xl shadow-md border border-[#EAE6DC] max-w-xs animate-bounce" style="animation-duration: 4s;">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg font-arabic">جَدّ</div>
+            <div>
+              <p class="text-xs text-brand-muted font-medium">Kosakata & Visual</p>
+              <p class="text-sm font-bold text-brand-dark">60 Mufradat (20 / Tema)</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:block absolute bottom-10 right-28 bg-white p-3.5 rounded-2xl shadow-md border border-[#EAE6DC] max-w-xs">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
+              <i class="fa-solid fa-clipboard-check"></i>
+            </div>
+            <div>
+              <p class="text-xs text-brand-muted font-medium">Evaluasi Interaktif</p>
+              <p class="text-sm font-bold text-brand-dark">60 Soal Tadrib (30 + 30)</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Content with Owner Credit -->
+        <div class="max-w-2xl space-y-4">
+          <div class="flex flex-wrap items-center gap-2">
+            <span class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-light-green border border-[#CDE3D9] text-xs font-semibold text-brand-dark">
+              <i class="fa-solid fa-sparkles text-amber-600"></i> Media Pembelajaran Bahasa Arab MAN / SD / MI / SMP
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-white border border-[#E0DBCF] text-xs font-bold text-brand-dark shadow-sm">
+              <i class="fa-solid fa-user-check text-emerald-700"></i> Erliana, S.Pd.I (MAN 4 Aceh Besar)
+            </span>
+          </div>
+
+          <div class="space-y-3 pt-2">
+            <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold text-brand-dark tracking-tight leading-normal">
+              Pembelajaran Interaktif
+            </h2>
+            <div class="font-arabic text-4xl sm:text-5xl md:text-6xl text-[#0B4F37] font-bold leading-loose pt-2 pb-1">
+              دَرْسُ الأُسْرَةِ
+            </div>
+          </div>
+
+          <p class="text-base sm:text-lg text-brand-muted leading-relaxed pt-2">
+            Kuasai <strong>60 Mufradat Kosakata</strong>, pelajari <strong>3 Percakapan Hiwar Mendalam</strong> beserta diagram Pohon Keluarga Rasulullah ﷺ, dan uji pemahamanmu melalui <strong>60 Tadrib Latihan Soal</strong> (30 Mufradat + 30 Hiwar).
+          </p>
+
+          <!-- Hero Action Buttons -->
+          <div class="pt-4 flex flex-wrap items-center gap-4">
+            <button onclick="switchTab('mufradat')" class="px-7 py-3.5 rounded-full bg-brand-dark hover:bg-[#073B28] text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
+              Mulai Belajar 60 Mufradat <i class="fa-solid fa-arrow-right text-xs"></i>
+            </button>
+            <button onclick="switchTab('tadrib-mufradat')" class="px-7 py-3.5 rounded-full bg-white hover:bg-emerald-50 text-brand-dark font-bold text-sm border border-[#D5CFBF] transition-all shadow-sm">
+              <i class="fa-solid fa-pen-ruler text-emerald-700"></i> Kerjakan 60 Soal Tadrib
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Feature Grid Cards -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        
+        <!-- Card 1 -->
+        <div onclick="switchTab('mufradat')" class="group bg-white p-7 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all cursor-pointer">
+          <div class="w-12 h-12 rounded-xl bg-brand-light-green text-brand-dark flex items-center justify-center font-bold text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-book-open text-brand-dark"></i>
+          </div>
+          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul 1</span>
+          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Mufradat (Kosakata)</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">20 Kosakata Anggota Keluarga, 20 Profesi, dan 20 Benda & Ruangan Rumah dengan audio & arti.</p>
+          <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
+            Pelajari Sekarang <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div onclick="switchTab('hiwar')" class="group bg-white p-7 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all cursor-pointer">
+          <div class="w-12 h-12 rounded-xl bg-amber-50 text-amber-800 flex items-center justify-center font-bold text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <span class="text-xs font-bold text-amber-700 uppercase tracking-wider">Modul 2</span>
+          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-amber-900">3 Percakapan Mendalam</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">Dialog kaya materi foto keluarga, silsilah Rasulullah ﷺ, dan rutinitas pagi lengkap dengan terjemahan.</p>
+          <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
+            Pelajari Hiwar <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div onclick="switchTab('tadrib-mufradat')" class="group bg-white p-7 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all cursor-pointer">
+          <div class="w-12 h-12 rounded-xl bg-teal-50 text-teal-800 flex items-center justify-center font-bold text-xl mb-5 group-hover:scale-110 transition-transform">
+            <i class="fa-solid fa-pen-ruler"></i>
+          </div>
+          <span class="text-xs font-bold text-teal-700 uppercase tracking-wider">Modul 3 & 4</span>
+          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-teal-900">60 Tadrib (Latihan Soal)</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">30 Soal Tadrib Mufradat dan 30 Soal Tadrib Hiwar dengan skor instan dan pembahasan jawaban.</p>
+          <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
+            Kerjakan Soal <i class="fa-solid fa-chevron-right text-[10px]"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TAB 2: MUFRADAT (60 KOSAKATA: 20/TEMA) ==================== -->
+    <section id="tab-mufradat" class="tab-content hidden fade-in space-y-8">
+      
+      <!-- Section Header -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft">
+        <div>
+          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Modul Pembelajaran</span>
+          <h2 class="text-2xl font-bold text-brand-dark font-arabic flex items-center gap-2">
+            المَفْرُدَات <span class="text-base font-normal font-sans text-brand-muted">(60 Kosakata: 20 per Tema)</span>
+          </h2>
+          <p class="text-xs text-brand-muted mt-1">Klik ikon audio <i class="fa-solid fa-volume-high text-brand-dark"></i> pada setiap kartu untuk mendengarkan pengucapan fasih.</p>
+        </div>
+
+        <!-- Filter Categories with Counts -->
+        <div class="flex flex-wrap gap-2">
+          <button id="filter-all-btn" onclick="filterMufradat('all')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-brand-dark text-white">Semua (60)</button>
+          <button id="filter-keluarga-btn" onclick="filterMufradat('keluarga')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Keluarga (20)</button>
+          <button id="filter-profesi-btn" onclick="filterMufradat('profesi')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Profesi (20)</button>
+          <button id="filter-benda-btn" onclick="filterMufradat('benda')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Benda & Rumah (20)</button>
+        </div>
+      </div>
+
+      <!-- 60 Mufradat Grid Cards -->
+      <div id="mufradat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
+        <!-- Javascript will populate 60 cards dynamically -->
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TAB 3: HIWAR (3 PERCAKAPAN DIPERBANYAK) ==================== -->
+    <section id="tab-hiwar" class="tab-content hidden fade-in space-y-8">
+      
+      <!-- Section Header & Switcher -->
+      <div class="bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-4">
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div>
+            <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Modul Percakapan Lengkap & Kaya Materi</span>
+            <h2 class="text-2xl font-bold text-brand-dark font-arabic">الحِوَارَات (Percakapan Interaktif)</h2>
+          </div>
+
+          <!-- Hiwar Selector Buttons -->
+          <div class="flex flex-wrap gap-2">
+            <button onclick="selectHiwar(1)" id="hiwar-tab-1" class="hiwar-selector-btn px-4 py-2 rounded-xl text-xs font-bold bg-brand-dark text-white">Hiwar 1: Foto Keluargaku</button>
+            <button onclick="selectHiwar(2)" id="hiwar-tab-2" class="hiwar-selector-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Hiwar 2: Keluarga Rasulullah ﷺ</button>
+            <button onclick="selectHiwar(3)" id="hiwar-tab-3" class="hiwar-selector-btn px-4 py-2 rounded-xl text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Hiwar 3: Rutinitas Pagi Subuh</button>
+          </div>
+        </div>
+
+        <!-- Roleplay & Audio Controls -->
+        <div class="pt-4 border-t border-[#E8E4D9] flex flex-wrap items-center justify-between gap-3 text-xs text-brand-muted">
+          <div class="flex items-center gap-2">
+            <i class="fa-solid fa-circle-info text-emerald-700"></i>
+            <span>Gunakan mode Praktik Roleplay untuk menguji kemampuan percakapanmu.</span>
+          </div>
+          <div class="flex items-center gap-3">
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="toggle-roleplay-a" onchange="applyRoleplayFilter()" class="rounded text-brand-dark focus:ring-brand-dark">
+              <span>Sembunyikan Pembicara 1</span>
+            </label>
+            <label class="flex items-center gap-2 cursor-pointer">
+              <input type="checkbox" id="toggle-roleplay-b" onchange="applyRoleplayFilter()" class="rounded text-brand-dark focus:ring-brand-dark">
+              <span>Sembunyikan Pembicara 2</span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <!-- HIWAR 1 CONTAINER -->
+      <div id="hiwar-content-1" class="hiwar-view space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-6">
+          <div class="border-b border-[#E8E4D9] pb-4">
+            <h3 class="text-xl font-bold text-brand-dark">Hiwar 1: صُورَةُ أُسْرَتِي (Foto Keluargaku)</h3>
+            <p class="text-xs text-brand-muted mt-1">Percakapan mendalam antara Ali (عَلِيّ) dan Ammar (عَمَّار) menceritakan album foto keluarga, kakek-nenek, orang tua, saudara, dan ucapan doa kebaikan.</p>
+          </div>
+
+          <!-- Dialogue Lines -->
+          <div class="space-y-5" id="dialogue-lines-1">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- HIWAR 2 CONTAINER -->
+      <div id="hiwar-content-2" class="hiwar-view hidden space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-8">
+          <div class="border-b border-[#E8E4D9] pb-4">
+            <h3 class="text-xl font-bold text-brand-dark">Hiwar 2: أُسْرَةُ الرَّسُولِ ﷺ (Keluarga Rasulullah ﷺ)</h3>
+            <p class="text-xs text-brand-muted mt-1">Percakapan mendalam Umar (عُمَر) dan Utsman (عُثْمَان) menceritakan silsilah kakek, orang tua, ibu susuan, paman-paman, bibi, istri, serta putra dan putri Rasulullah ﷺ.</p>
+          </div>
+
+          <!-- SVG Interactive Family Tree Diagram -->
+          <div class="bg-gradient-to-b from-[#F6F4ED] to-[#FFFFFF] p-6 rounded-2xl border border-[#E6E0D0] text-center space-y-4 shadow-sm">
+            <span class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full">Diagram Pohon Keluarga (شَجَرَةُ أُسْرَةِ الرَّسُولِ)</span>
+            <div class="w-full overflow-x-auto custom-scrollbar py-4">
+              <!-- Visual SVG MindMap / Tree Diagram -->
+              <div class="min-w-[650px] mx-auto flex flex-col items-center gap-6">
+                
+                <!-- Root: Muhammad SAW -->
+                <div class="relative bg-amber-500 text-white px-8 py-4 rounded-full font-bold text-2xl font-arabic shadow-md border-4 border-amber-200">
+                  مُحَمَّدٌ ﷺ
+                  <span class="block text-xs font-sans font-normal opacity-90">(Nabi Muhammad SAW)</span>
+                </div>
+
+                <!-- Vertical Connector Line -->
+                <div class="w-1 h-8 bg-emerald-700"></div>
+
+                <!-- Level 2: Orang Tua & Kakek -->
+                <div class="grid grid-cols-3 gap-6 w-full max-w-2xl">
+                  <div class="bg-emerald-800 text-white p-3 rounded-2xl border-2 border-emerald-600 shadow-sm text-center">
+                    <span class="text-xs text-emerald-200 block font-sans">Kakek (جَدّ)</span>
+                    <span class="text-lg font-bold font-arabic">عَبْدُ الْمُطَّلِب</span>
+                  </div>
+                  <div class="bg-emerald-700 text-white p-3 rounded-2xl border-2 border-emerald-500 shadow-sm text-center">
+                    <span class="text-xs text-emerald-200 block font-sans">Ayah (وَالِد)</span>
+                    <span class="text-lg font-bold font-arabic">عَبْدُ اللَّه</span>
+                  </div>
+                  <div class="bg-emerald-700 text-white p-3 rounded-2xl border-2 border-emerald-500 shadow-sm text-center">
+                    <span class="text-xs text-emerald-200 block font-sans">Ibu (وَالِدَة)</span>
+                    <span class="text-lg font-bold font-arabic">آمِنَة</span>
+                  </div>
+                </div>
+
+                <!-- Level 3: Paman & Bibi (عَمّ & عَمَّة) -->
+                <div class="w-full border-t-2 border-emerald-600 pt-4">
+                  <span class="text-xs font-bold text-brand-muted block mb-2 font-sans">Paman & Bibi (عَمّ & عَمَّة):</span>
+                  <div class="flex flex-wrap justify-center gap-3">
+                    <span class="bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1.5 rounded-xl text-sm font-arabic font-bold">الْعَبَّاس</span>
+                    <span class="bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1.5 rounded-xl text-sm font-arabic font-bold">حَمْزَة</span>
+                    <span class="bg-emerald-100 text-emerald-900 border border-emerald-300 px-3 py-1.5 rounded-xl text-sm font-arabic font-bold">أَبُو طَالِب</span>
+                    <span class="bg-amber-100 text-amber-900 border border-amber-300 px-3 py-1.5 rounded-xl text-sm font-arabic font-bold">صَفِيَّة (عَمَّة)</span>
+                  </div>
+                </div>
+
+                <!-- Level 4: Putra & Putri (ابْن & ابْنَة) -->
+                <div class="w-full border-t-2 border-emerald-600 pt-4">
+                  <span class="text-xs font-bold text-brand-muted block mb-2 font-sans">Putra & Putri Rasulullah ﷺ (أَبْنَاء & بَنَات):</span>
+                  <div class="flex flex-wrap justify-center gap-2 text-xs">
+                    <span class="bg-sky-100 text-sky-900 px-3 py-1.5 rounded-lg font-arabic font-bold">الْقَاسِم (ابْن)</span>
+                    <span class="bg-sky-100 text-sky-900 px-3 py-1.5 rounded-lg font-arabic font-bold">عَبْدُ اللَّه (ابْن)</span>
+                    <span class="bg-sky-100 text-sky-900 px-3 py-1.5 rounded-lg font-arabic font-bold">إِبْرَاهِيم (ابْن)</span>
+                    <span class="bg-pink-100 text-pink-900 px-3 py-1.5 rounded-lg font-arabic font-bold">فَاطِمَة (ابْنَة)</span>
+                    <span class="bg-pink-100 text-pink-900 px-3 py-1.5 rounded-lg font-arabic font-bold">رُقَيَّة (ابْنَة)</span>
+                    <span class="bg-pink-100 text-pink-900 px-3 py-1.5 rounded-lg font-arabic font-bold">زَيْنَب (ابْنَة)</span>
+                    <span class="bg-pink-100 text-pink-900 px-3 py-1.5 rounded-lg font-arabic font-bold">أُمُّ كُلْثُوم (ابْنَة)</span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- Dialogue Lines -->
+          <div class="space-y-5" id="dialogue-lines-2">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+
+      <!-- HIWAR 3 CONTAINER -->
+      <div id="hiwar-content-3" class="hiwar-view hidden space-y-6">
+        <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-6">
+          <div class="border-b border-[#E8E4D9] pb-4">
+            <h3 class="text-xl font-bold text-brand-dark">Hiwar 3: فِي الصَّبَاحِ (Rutinitas Pagi Subuh)</h3>
+            <p class="text-xs text-brand-muted mt-1">Percakapan mendalam Ibu, Ayah, Saad, dan Said tentang azan Subuh, wudhu, tilawah Al-Qur'an, shalat subuh, jas mantel, kacamata, teh hangat, dan shalat berjamaah di masjid.</p>
+          </div>
+
+          <!-- Dialogue Lines -->
+          <div class="space-y-5" id="dialogue-lines-3">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TAB 4: TADRIB MUFRADAT (30 SOAL) ==================== -->
+    <section id="tab-tadrib-mufradat" class="tab-content hidden fade-in space-y-8">
+      
+      <!-- Quiz Header -->
+      <div class="bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Latihan Kosakata Lengkap</span>
+          <h2 class="text-2xl font-bold text-brand-dark font-arabic">تَدْرِيبُ المَفْرُدَات <span class="text-sm font-sans font-normal text-brand-muted">(30 Soal)</span></h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="text-right">
+            <span class="text-xs text-brand-muted block">Kemajuan Latihan</span>
+            <span class="text-sm font-bold text-brand-dark"><span id="tadrib-m-progress">0</span> / 30 Soal</span>
+          </div>
+          <button onclick="resetTadribMufradat()" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#EFECE4] text-brand-dark hover:bg-brand-light-green transition-all">
+            <i class="fa-solid fa-rotate-right mr-1"></i> Reset Soal
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Questions Container -->
+      <div id="quiz-mufradat-container" class="space-y-6">
+        <!-- JS will populate 30 questions -->
+      </div>
+
+      <!-- Submit / Score Summary Button -->
+      <div class="bg-[#FAF8F5] p-6 rounded-2xl border border-[#E8E4D9] shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-brand-muted">
+          Nilai Tadrib Mufradat: <strong id="score-mufradat-display" class="text-brand-dark text-lg">0</strong> / 100
+        </div>
+        <button onclick="checkAllTadribMufradat()" class="px-8 py-3.5 rounded-full bg-brand-dark hover:bg-[#073B28] text-white font-bold text-sm shadow-md transition-all">
+          <i class="fa-solid fa-check-double mr-2"></i> Periksa Semua 30 Jawaban Mufradat
+        </button>
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TAB 5: TADRIB HIWAR (30 SOAL) ==================== -->
+    <section id="tab-tadrib-hiwar" class="tab-content hidden fade-in space-y-8">
+      
+      <!-- Quiz Header -->
+      <div class="bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div>
+          <span class="text-xs font-bold text-amber-800 uppercase tracking-wider">Latihan Percakapan Lengkap</span>
+          <h2 class="text-2xl font-bold text-brand-dark font-arabic">تَدْرِيبُ الحِوَار <span class="text-sm font-sans font-normal text-brand-muted">(30 Soal)</span></h2>
+        </div>
+
+        <div class="flex items-center gap-4">
+          <div class="text-right">
+            <span class="text-xs text-brand-muted block">Kemajuan Latihan</span>
+            <span class="text-sm font-bold text-brand-dark"><span id="tadrib-h-progress">0</span> / 30 Soal</span>
+          </div>
+          <button onclick="resetTadribHiwar()" class="px-4 py-2 rounded-xl text-xs font-bold bg-[#EFECE4] text-brand-dark hover:bg-brand-light-green transition-all">
+            <i class="fa-solid fa-rotate-right mr-1"></i> Reset Soal
+          </button>
+        </div>
+      </div>
+
+      <!-- Quiz Questions Container -->
+      <div id="quiz-hiwar-container" class="space-y-6">
+        <!-- JS will populate 30 questions -->
+      </div>
+
+      <!-- Submit / Score Summary Button -->
+      <div class="bg-[#FAF8F5] p-6 rounded-2xl border border-[#E8E4D9] shadow-soft flex flex-col sm:flex-row items-center justify-between gap-4">
+        <div class="text-sm text-brand-muted">
+          Nilai Tadrib Hiwar: <strong id="score-hiwar-display" class="text-brand-dark text-lg">0</strong> / 100
+        </div>
+        <button onclick="checkAllTadribHiwar()" class="px-8 py-3.5 rounded-full bg-brand-dark hover:bg-[#073B28] text-white font-bold text-sm shadow-md transition-all">
+          <i class="fa-solid fa-check-double mr-2"></i> Periksa Semua 30 Jawaban Hiwar
+        </button>
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-[#E8E4D9] py-10 mt-12">
+    <div class="max-w-7xl mx-auto px-4 text-center space-y-4">
+      <div class="flex items-center justify-center gap-2 font-arabic text-2xl font-bold text-brand-dark">
+        <span>الأسرة</span> • <span>Media Pembelajaran Interaktif Bahasa Arab</span>
+      </div>
+      
+      <!-- Owner Credit Badge -->
+      <div class="inline-flex items-center gap-2 bg-[#F6F4ED] border border-[#E5E0D5] px-5 py-2 rounded-full text-xs font-semibold text-brand-dark shadow-sm">
+        <i class="fa-solid fa-user-graduate text-emerald-800"></i>
+        <span>Disusun & Dikembangkan oleh: <strong>Erliana, S.Pd.I</strong> • MAN 4 Aceh Besar</span>
+      </div>
+
+      <p class="text-xs text-brand-muted max-w-xl mx-auto leading-relaxed">
+        Modul Lengkap: 60 Mufradat (20 per Tema), 3 Hiwar Percakapan Mendalam dengan Silsilah Rasulullah ﷺ, dan 60 Latihan Soal Interaktif (30 Mufradat + 30 Hiwar).
+      </p>
+    </div>
+  </footer>
+
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // ==================== 1. DATA 60 MUFRADAT (EXACTLY 20 PER THEME) ====================
+    const mufradatData = [
+      // --- TEMA 1: KELUARGA (20 ITEMS) ---
+      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users" },
+      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap" },
+      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie" },
+      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding" },
+      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large" },
+      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user" },
+      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person" },
+      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress" },
+      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child" },
+      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress" },
+      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse" },
+      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor" },
+      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user" },
+      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse" },
+      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group" },
+      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart" },
+      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child" },
+      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching" },
+      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof" },
+      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house" },
+
+      // --- TEMA 2: PROFESI (20 ITEMS) ---
+      { id: 21, arabic: "مُهَنْدِس", latin: "Muhandis", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting" },
+      { id: 22, arabic: "مُهَنْدِسَة", latin: "Muhandisah", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass" },
+      { id: 23, arabic: "طَبِيب", latin: "Thabib", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor" },
+      { id: 24, arabic: "طَبِيبَة", latin: "Thabibah", indo: "Dokter (Perempuan)", category: "profesi", icon: "fa-stethoscope" },
+      { id: 25, arabic: "مُعَلِّم", latin: "Mu'allim", indo: "Guru (Laki-laki)", category: "profesi", icon: "fa-chalkboard-user" },
+      { id: 26, arabic: "مُعَلِّمَة", latin: "Mu'allimah", indo: "Guru (Perempuan)", category: "profesi", icon: "fa-graduation-cap" },
+      { id: 27, arabic: "طَالِب", latin: "Thalib", indo: "Siswa (Laki-laki)", category: "profesi", icon: "fa-book-reader" },
+      { id: 28, arabic: "طَالِبَة", latin: "Thalibah", indo: "Siswi (Perempuan)", category: "profesi", icon: "fa-user-graduate" },
+      { id: 29, arabic: "مُرَبِّيَة", latin: "Murabbiyah", indo: "Pengasuh / Pendidik", category: "profesi", icon: "fa-person-shelter" },
+      { id: 30, arabic: "تَاجِر", latin: "Taajir", indo: "Pedagang (Laki-laki)", category: "profesi", icon: "fa-store" },
+      { id: 31, arabic: "تَاجِرَة", latin: "Taajirah", indo: "Pedagang (Perempuan)", category: "profesi", icon: "fa-shop" },
+      { id: 32, arabic: "مُوَظَّف", latin: "Muwazhphaf", indo: "Pegawai (Laki-laki)", category: "profesi", icon: "fa-briefcase" },
+      { id: 33, arabic: "مُوَظَّفَة", latin: "Muwazhphafah", indo: "Pegawai (Perempuan)", category: "profesi", icon: "fa-building-user" },
+      { id: 34, arabic: "سَائِق", latin: "Saa'iq", indo: "Sopir / Pengemudi", category: "profesi", icon: "fa-car" },
+      { id: 35, arabic: "خَادِم", latin: "Khaadim", indo: "Asisten Rumah Tangga", category: "profesi", icon: "fa-hand-holding-heart" },
+      { id: 36, arabic: "شُرْطِيّ", latin: "Shurthiyy", indo: "Polisi", category: "profesi", icon: "fa-user-shield" },
+      { id: 37, arabic: "جُنْدِيّ", latin: "Jundiyy", indo: "Tentara / Prajurit", category: "profesi", icon: "fa-person-military-rifle" },
+      { id: 38, arabic: "مُصَوِّر", latin: "Mushawwir", indo: "Fotografer", category: "profesi", icon: "fa-camera" },
+      { id: 39, arabic: "مُمَرِّضَة", latin: "Mumarrizhah", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical" },
+      { id: 40, arabic: "مَدِير", latin: "Madiir", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear" },
+
+      // --- TEMA 3: BENDA & RUMAH (20 ITEMS) ---
+      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image" },
+      { id: 42, arabic: "مِعْطَف", latin: "Mi'thaf", indo: "Jas / Mantel", category: "benda", icon: "fa-vest" },
+      { id: 43, arabic: "نَظَّارَة", latin: "Naththarah", indo: "Kacamata", category: "benda", icon: "fa-glasses" },
+      { id: 44, arabic: "غُرْفَة", latin: "Ghurfah", indo: "Kamar Tidur", category: "benda", icon: "fa-bed" },
+      { id: 45, arabic: "حَمَّام", latin: "Hammam", indo: "Kamar Mandi", category: "benda", icon: "fa-shower" },
+      { id: 46, arabic: "مُصَلَّى", latin: "Mushalla", indo: "Mushalla / Tempat Shalat", category: "benda", icon: "fa-rug" },
+      { id: 47, arabic: "مَسْجِد", latin: "Masjid", indo: "Masjid", category: "benda", icon: "fa-mosque" },
+      { id: 48, arabic: "أَذَانُ الْفَجْرِ", latin: "Adhanul Fajr", indo: "Azan Subuh", category: "benda", icon: "fa-bell" },
+      { id: 49, arabic: "سَجَّادَة", latin: "Sajjadah", indo: "Sajadah Shalat", category: "benda", icon: "fa-mattress-pillow" },
+      { id: 50, arabic: "مُصْحَف", latin: "Mushhaf", indo: "Mushaf Al-Qur'an", category: "benda", icon: "fa-book-quran" },
+      { id: 51, arabic: "مَطْبَخ", latin: "Mathbakh", indo: "Dapur", category: "benda", icon: "fa-kitchen-set" },
+      { id: 52, arabic: "صَالُون", latin: "Shaalun", indo: "Ruang Tamu", category: "benda", icon: "fa-couch" },
+      { id: 53, arabic: "سَرِير", latin: "Sariir", indo: "Tempat Tidur", category: "benda", icon: "fa-bed" },
+      { id: 54, arabic: "خِزَانَة", latin: "Khizaanah", indo: "Lemari Pakaian", category: "benda", icon: "fa-box-archive" },
+      { id: 55, arabic: "مَكْتَب", latin: "Maktab", indo: "Meja Belajar", category: "benda", icon: "fa-table" },
+      { id: 56, arabic: "كُرْسِيّ", latin: "Kursiyy", indo: "Kursi Duduk", category: "benda", icon: "fa-chair" },
+      { id: 57, arabic: "سَاعَة", latin: "Saa'ah", indo: "Jam Dinding / Tangan", category: "benda", icon: "fa-clock" },
+      { id: 58, arabic: "تِلْفَاز", latin: "Tilpaaz", indo: "Televisi", category: "benda", icon: "fa-tv" },
+      { id: 59, arabic: "بَاب", latin: "Baab", indo: "Pintu Rumah", category: "benda", icon: "fa-door-open" },
+      { id: 60, arabic: "نَافِذَة", latin: "Naaphizhah", indo: "Jendela", category: "benda", icon: "fa-window-maximize" }
+    ];
+
+    // ==================== 2. DATA HIWAR SANGAT LENGKAP ====================
+    const hiwarData = {
+      1: [
+        { speaker: "عَلِيّ", line: "السَّلَامُ عَلَيْكُمْ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ يَا عَمَّارُ .", role: 1, translation: "Assalamu'alaikum warahmatullahi wabarakatuh wahai Ammar." },
+        { speaker: "عَمَّار", line: "وَعَلَيْكُمُ السَّلَامُ وَرَحْمَةُ اللَّهِ وَبَرَكَاتُهُ يَا عَلِيُّ. كَيْفَ حَالُكَ ؟", role: 2, translation: "Wa'alaikumsalam warahmatullahi wabarakatuh wahai Ali. Bagaimana kabarmu?" },
+        { speaker: "عَلِيّ", line: "الْحَمْدُ لِلَّهِ ، أَنَا بِخَيْرٍ وَصِحَّةٍ وَعَافِيَةٍ .", role: 1, translation: "Alhamdulillah, aku baik-baik saja, sehat dan afiat." },
+        { speaker: "عَمَّار", line: "مَا هَذَا الأَلْبُومُ الْجَمِيلُ فِي يَدِكَ ؟", role: 2, translation: "Apakah album indah di tanganmu ini?" },
+        { speaker: "عَلِيّ", line: "هَذِهِ صُورَةُ أُسْرَتِي الْكَرِيمَةِ فِي يَوْمِ الْعِيدِ .", role: 1, translation: "Ini adalah foto keluargaku yang mulia pada hari raya." },
+        { speaker: "عَمَّار", line: "مَا شَاءَ اللَّهُ ! أُسْرَةٌ مُبَارَكَةٌ. مَنْ هَذَا الرَّجُلُ ؟", role: 2, translation: "Masya Allah! Keluarga yang diberkahi. Siapakah laki-laki ini?" },
+        { speaker: "عَلِيّ", line: "هَذَا وَالِدِي عَدْنَان ، وَهُوَ مُهَنْدِسٌ مَاهِرٌ يَبْنِي الْبُيُوتَ .", role: 1, translation: "Ini ayahku Adnan, dia seorang insinyur handal yang membangun rumah-rumah." },
+        { speaker: "عَمَّار", line: "وَمَنْ هَذِهِ الْمَرْأَةُ الْكَرِيمَةُ بِجَانِبِهِ ؟", role: 2, translation: "Dan siapa wanita mulia di sampingnya ini?" },
+        { speaker: "عَلِيّ", line: "هَذِهِ وَالِدَتِي سَعِيدَة ، وَهِيَ طَبِيبَةٌ تُعَالِجُ الْمَرْضَى فِي الْمُسْتَشْفَى .", role: 1, translation: "Ini ibuku Saidah, dia seorang dokter yang mengobati orang sakit di rumah sakit." },
+        { speaker: "عَمَّار", line: "وَمَنْ هَذَا الشَّابُّ النَّشِيطُ ؟", role: 2, translation: "Dan siapakah pemuda yang aktif ini?" },
+        { speaker: "عَلِيّ", line: "هَذَا أَخِي عِيسَى ، وَهُوَ طَالِبٌ مُجْتَهِدٌ فِي الْمَدْرَسَةِ الثَّانَوِيَّةِ .", role: 1, translation: "Ini saudaraku Isa, dia seorang siswa yang rajin di SMA." },
+        { speaker: "عَمَّار", line: "وَمَنْ هَذِهِ الْفَتَاةُ اللَّطِيفَةُ ؟", role: 2, translation: "Dan siapa gadis yang ramah ini?" },
+        { speaker: "عَلِيّ", line: "هَذِهِ أُخْتِي عَبْلَة ، وَهِيَ مُعَلِّمَةٌ تُعَلِّمُ اللُغَةَ الْعَرَبِيَّةَ .", role: 1, translation: "Ini saudariku Abla, dia seorang guru yang mengajar Bahasa Arab." },
+        { speaker: "عَمَّار", line: "وَمَنْ هَذَانِ الشَّيْخَانِ فِي وَسَطِ الصُّورَةِ ؟", role: 2, translation: "Dan siapakah dua orang tua di tengah foto ini?" },
+        { speaker: "عَلِيّ", line: "هَذَا جَدِّي وَهَذِهِ جَدَّتِي ، هُمَا يَعِيشَانِ مَعَنَا وَنَحْنُ نُحِبُّهُمَا كَثِيرًا .", role: 1, translation: "Ini kakekku dan ini nenekku, mereka tinggal bersama kami dan kami sangat menyayangi mereka." },
+        { speaker: "عَمَّار", line: "مَا شَاءَ اللَّهُ ! أُسْرَةٌ مُتَحَابَّةٌ. حَفِظَ اللَّهُ أُسْرَتَكَ مِنْ كُلِّ سُوءٍ .", role: 2, translation: "Masya Allah! Keluarga yang saling menyayangi. Semoga Allah menjaga keluargamu dari segala keburukan." },
+        { speaker: "عَلِيّ", line: "آِمِينَ يَا رَبَّ الْعَالَمِينَ ، وَشُكْرًا جَزِيلًا لَكَ يَا عَمَّارُ .", role: 1, translation: "Aamiin ya Rabbal 'Alamin, dan terima kasih banyak kepadamu wahai Ammar." }
+      ],
+      2: [
+        { speaker: "عُمَر", line: "السَّلَامُ عَلَيْكُمْ يَا عُثْمَانُ. مَا هَذِهِ الشَّجَرَةُ الْمُبَارَكَةُ ؟", role: 1, translation: "Assalamu'alaikum wahai Utsman. Apakah bagan pohon yang diberkahi ini?" },
+        { speaker: "عُثْمَان", line: "وَعَلَيْكُمُ السَّلَامُ. نَعَمْ ، هَذِهِ شَجَرَةُ أُسْرَةِ خَاتَمِ النَّبِيِّينَ ، مُحَمَّدٍ صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ .", role: 2, translation: "Wa'alaikumsalam. Ya, ini pohon keluarga Penutup Para Nabi, Muhammad ﷺ." },
+        { speaker: "عُمَر", line: "صَلَّى اللَّهُ عَلَيْهِ وَسَلَّمَ. مَنْ وَالِدُهُ الشَّرِيفُ ؟", role: 1, translation: "Sallallahu 'alaihi wasallam. Siapakah ayahnya yang mulia?" },
+        { speaker: "عُثْمَان", line: "وَالِدُهُ عَبْدُ اللَّهِ بْنُ عَبْدِ الْمُطَّلِبِ .", role: 2, translation: "Ayahnya adalah Abdullah bin Abdul Muttalib." },
+        { speaker: "عُمَر", line: "وَهَذِهِ وَالِدَتُهُ آمِنَةُ بِنْتُ وَهَبٍ ، أَلَيْسَ كَذَلِكَ ؟", role: 1, translation: "Dan ini ibunya Aminah binti Wahab, bukankah begitu?" },
+        { speaker: "عُثْمَان", line: "نَعَمْ ، كَذَلِكَ. وَمُرَضِّعَتُهُ هِيَ حَلِيمَةُ السَّعْدِيَّةُ .", role: 2, translation: "Ya, betul. Dan ibu susuannya adalah Halimah as-Sa'diyyah." },
+        { speaker: "عُمَر", line: "وَمَنْ جَدُّهُ الَّذِي رَبَّاهُ فِي صِغَرِهِ ؟", role: 1, translation: "Dan siapa kakeknya yang merawatnya di masa kecilnya?" },
+        { speaker: "عُثْمَان", line: "جَدُّهُ عَبْدُ الْمُطَّلِبِ ، ثُمَّ كَفَلَهُ عَمُّهُ أَبُو طَالِبٍ .", role: 2, translation: "Kakeknya Abdul Muttalib, kemudian dilanjutkan oleh pamannya Abu Talib." },
+        { speaker: "عُمَر", line: "وَمَنْ أَعْمَامُهُ الآخَرُونَ ؟", role: 1, translation: "Dan siapa paman-pamannya yang lain?" },
+        { speaker: "عُثْمَان", line: "مِنْ أَعْمَامِهِ : الْعَبَّاسُ ، وَحَمْزَةُ سَيِّدُ الشُّهَدَاءِ .", role: 2, translation: "Di antara pamannya: Al-Abbas, dan Hamzah Penghulu Para Syuhada." },
+        { speaker: "عُمَر", line: "وَهَلْ تَعْرِفُ عَمَّتَهُ ؟", role: 1, translation: "Dan apakah engkau mengetahui bibinya?" },
+        { speaker: "عُثْمَان", line: "نَعَمْ ، عَمَّتُهُ هِيَ صَفِيَّةُ رَضِيَ اللَّهُ عَنْهَا .", role: 2, translation: "Ya, bibinya adalah Safiyyah radhiyallahu 'anha." },
+        { speaker: "عُمَر", line: "وَمَنْ أَبْنَاؤُهُ الزُّكُورُ يَا عُثْمَانُ ؟", role: 1, translation: "Dan siapakah putra-putranya yang laki-laki wahai Utsman?" },
+        { speaker: "عُثْمَان", line: "أَبْنَاؤُهُ ثَلَاثَةٌ : الْقَاسِمُ ، وَعَبْدُ اللَّهِ ، وَإِبْرَاهِيمُ .", role: 2, translation: "Putra-putranya ada tiga: Al-Qasim, Abdullah, dan Ibrahim." },
+        { speaker: "عُمَر", line: "وَمَنْ بَنَاتُهُ الأَرْبَعُ الطَّاهِرَاتُ ؟", role: 1, translation: "Dan siapakah empat putrinya yang suci?" },
+        { speaker: "عُثْمَان", line: "بَنَاتُهُ هُنَّ : فَاطِمَةُ الزَّهْرَاءُ ، وَرُقَيَّةُ ، وَزَيْنَبُ ، وَأُمُّ كُلْثُومٍ .", role: 2, translation: "Putri-putrinya adalah: Fatimah az-Zahra, Ruqayyah, Zainab, dan Ummu Kulthum." },
+        { speaker: "عُمَر", line: "جَزَاكَ اللَّهُ خَيْرًا كَثِيرًا عَلَى هَذِهِ الْمَعْلُومَاتِ الْقَيِّمَةِ فِي السِيرَةِ .", role: 1, translation: "Semoga Allah membalasmu dengan kebaikan yang banyak atas informasi sirah yang sangat berharga ini." }
+      ],
+      3: [
+        { speaker: "الأُمّ", line: "هَذَا أَذَانُ الْفَجْرِ يَا أَبَا سَعْدٍ ، اسْتَيْقِظُوا لِلصَّلَاةِ .", role: 1, translation: "Ini azan Subuh wahai Ayah Saad, bangunlah untuk shalat." },
+        { speaker: "الأَب", line: "اللَّهُ أَكْبَرُ . اللَّهُ أَكْبَرُ . الصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ. أَيْنَ الأَوْلَادُ ؟", role: 2, translation: "Allah Maha Besar. Shalat lebih baik daripada tidur. Di manakah anak-anak?" },
+        { speaker: "الأُمّ", line: "سَعْدٌ فِي الْحَمَّامِ يَتَوَضَّأُ بِالْمَاءِ لِلصَّلَاةِ .", role: 1, translation: "Saad ada di kamar mandi sedang berwudhu dengan air untuk shalat." },
+        { speaker: "الأَب", line: "وَأَيْنَ سَعِيدٌ ؟ هَلْ هُوَ نَائِمٌ ؟", role: 2, translation: "Dan di manakah Said? Apakah dia tidur?" },
+        { speaker: "الأُمّ", line: "لَا ، سَعِيدٌ فِي الْغُرْفَةِ يَقْرَأُ الْقُرْآنَ الْكَرِيمَ بِصَوْتٍ جَمِيلٍ .", role: 1, translation: "Tidak, Said ada di kamar sedang membaca Al-Qur'an al-Karim dengan suara yang merdu." },
+        { speaker: "الأَب", line: "مَا شَاءَ اللَّهُ ! وَأَيْنَ سَعِيدَةُ ؟", role: 2, translation: "Masya Allah! Dan di manakah Saida?" },
+        { speaker: "الأُمّ", line: "سَعِيدَةُ فِي الْمُصَلَّى تُصَلِّي رَكْعَتَيِ الْفَجْرِ .", role: 1, translation: "Saida ada di mushalla sedang shalat dua rakaat Subuh." },
+        { speaker: "الأَب", line: "أَيْنَ الْمِعْطَفُ يَا سَعْدُ ؟ الْجَوُّ بَارِدٌ جِدًّا فِي الْخَارِجِ .", role: 2, translation: "Di manakah jas/mantel wahai Saad? Udara di luar sangat dingin." },
+        { speaker: "سَعْد", line: "هَذَا هُوَ الْمِعْطَفُ يَا وَالِدِي الْعَزِيزَ ، تَفَضَّلْ اِلْبَسْهُ .", role: 1, translation: "Ini jasnya wahai ayahku tersayang, silakan kenakan." },
+        { speaker: "الأَب", line: "شُكْرًا يَا سَعْدُ. وَأَيْنَ النَّظَّارَةُ يَا سَعِيدُ ؟", role: 2, translation: "Terima kasih wahai Saad. Dan di manakah kacamata wahai Said?" },
+        { speaker: "سَعِيد", line: "هَذِهِ هِيَ النَّظَّارَةُ عَلَى الْمَكْتَبِ يَا وَالِدِي ، هَا هِيَ .", role: 1, translation: "Ini kacamatanya di atas meja wahai ayahku, ini dia." },
+        { speaker: "الأُمّ", line: "أَعْدَدْتُ لَكُمُ الشَّايَ الدَّافِئَ بَعْدَ الصَّلَاةِ إِنْ شَاءَ اللَّهُ .", role: 1, translation: "Aku sudah menyiapkan teh hangat untuk kalian setelah shalat insya Allah." },
+        { speaker: "الأَب", line: "بَارَك اللهُ فِيكِ. هَيَّا بِنَا يَا أَوْلَادُ إِلَى الْمَسْجِدِ لِصَلَاةِ الْجَمَاعَةِ .", role: 2, translation: "Semoga Allah memberkahimu. Mari anak-anak kita ke masjid untuk shalat berjamaah." },
+        { speaker: "سَعْد وَسَعِيد", line: "هَيَّا بِنَا يَا وَالِدِي ، نَحْنُ جَاهِزُونَ وَمُسْتَعِدُّونَ .", role: 1, translation: "Ayo wahai ayahku, kami sudah siap dan bersiap-siap." }
+      ]
+    };
+
+    // ==================== 3. DATA 30 SOAL TADRIB MUFRADAT (EXACTLY 30 QUESTIONS) ====================
+    const tadribMufradatData = [
+      { id: 1, type: "mc", q: "Apa arti dari kata Bahasa Arab 'جَدّ' ?", options: ["Ayah", "Kakek", "Paman", "Saudara Laki-laki"], correct: 1 },
+      { id: 2, type: "mc", q: "Manakah kata Bahasa Arab yang berarti 'Ibu' ?", options: ["وَالِدَة / أُمّ", "عَمَّة", "جَدَّة", "ابْنَة"], correct: 0 },
+      { id: 3, type: "mc", q: "Apa arti dari 'مُهَنْدِس' dalam percakapan keluarga Ali?", options: ["Dokter", "Guru", "Insinyur / Arsitek", "Siswa"], correct: 2 },
+      { id: 4, type: "mc", q: "Manakah kosakata yang berarti 'Kacamata' ?", options: ["صُورَة", "مِعْطَف", "نَظَّارَة", "غُرْفَة"], correct: 2 },
+      { id: 5, type: "mc", q: "Kata 'طَبِيبَة' merujuk pada profesi...", options: ["Dokter Perempuan", "Dokter Laki-laki", "Guru Perempuan", "Insinyur"], correct: 0 },
+      { id: 6, type: "mc", q: "Lengkapilah: هَذِهِ (...) عَبْلَة وَهِيَ مُعَلِّمَةٌ", options: ["أَخِي", "أُخْتِي", "وَالِدِي", "جَدِّي"], correct: 1 },
+      { id: 7, type: "mc", q: "Apa arti dari kata 'عَمّ' ?", options: ["Paman dari Ayah", "Bibi dari Ayah", "Kakek", "Cucu"], correct: 0 },
+      { id: 8, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Pohon Keluarga' ?", options: ["صُورَةُ الأُسْرَةِ", "شَجَرَةُ الأُسْرَةِ", "غُرْفَةُ الأُسْرَةِ", "أَذَانُ الأُسْرَةِ"], correct: 1 },
+      { id: 9, type: "mc", q: "Manakah pasangan kata dan arti yang BENAR?", options: ["مِعْطَف = Jas / Mantel", "حَمَّام = Kamar Tidur", "طَالِب = Guru", "مَسْجِد = Rumah"], correct: 0 },
+      { id: 10, type: "mc", q: "Apa kata Bahasa Arab untuk 'Anak Laki-laki' ?", options: ["ابْن", "ابْنَة", "أَخ", "حَفِيد"], correct: 0 },
+      { id: 11, type: "mc", q: "Tempat shalat di dalam rumah dinamakan...", options: ["حَمَّام", "غُرْفَة", "مُصَلَّى", "مَسْجِد"], correct: 2 },
+      { id: 12, type: "mc", q: "Kata 'زَوْجَة' artinya adalah...", options: ["Istri", "Suami", "Anak Perempuan", "Nenek"], correct: 0 },
+      { id: 13, type: "mc", q: "Manakah yang merupakan arti kata 'حَفِيد' ?", options: ["Cucu Laki-laki", "Paman", "Ayah", "Kakek"], correct: 0 },
+      { id: 14, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Kamar Tidur' ?", options: ["حَمَّام", "غُرْفَة", "مُصَلَّى", "صُورَة"], correct: 1 },
+      { id: 15, type: "mc", q: "Kata 'أَذَانُ الْفَجْرِ' berarti...", options: ["Azan Subuh", "Azan Dzuhur", "Shalat Maghrib", "Mengaji"], correct: 0 },
+
+      // Additional 15 questions to reach 30 Tadrib Mufradat
+      { id: 16, type: "mc", q: "Apa kata Bahasa Arab untuk 'Paman dari pihak Ibu' ?", options: ["عَمّ", "خَال", "أَب", "جَدّ"], correct: 1 },
+      { id: 17, type: "mc", q: "Kata 'خَالَة' artinya adalah...", options: ["Bibi dari pihak Ibu", "Bibi dari pihak Ayah", "Saudari", "Nenek"], correct: 0 },
+      { id: 18, type: "mc", q: "Manakah kata Bahasa Arab yang berarti 'Sanak Kerabat / Saudara' ?", options: ["أَقَارِب", "أَذَان", "صَالُون", "سَجَّادَة"], correct: 0 },
+      { id: 19, type: "mc", q: "Kata Bahasa Arab untuk 'Siswi / Pelajar Perempuan' adalah...", options: ["طَالِب", "طَالِبَة", "مُعَلِّمَة", "طَبِيبَة"], correct: 1 },
+      { id: 20, type: "mc", q: "Kata 'تَاجِر' merujuk pada profesi...", options: ["Insinyur", "Pedagang Laki-laki", "Polisi", "Sopir"], correct: 1 },
+      { id: 21, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Sopir / Pengemudi' ?", options: ["سَائِق", "خَادِم", "جُنْدِيّ", "مُصَوِّر"], correct: 0 },
+      { id: 22, type: "mc", q: "Kata 'شُرْطِيّ' artinya adalah...", options: ["Polisi", "Tentara", "Perawat", "Pedagang"], correct: 0 },
+      { id: 23, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Tentara / Prajurit' ?", options: ["جُنْدِيّ", "شُرْطِيّ", "مَدِير", "مُوَظَّف"], correct: 0 },
+      { id: 24, type: "mc", q: "Kata 'مَدِير' memiliki arti...", options: ["Kepala Sekolah / Direktur", "Siswa", "Perawat", "Asisten"], correct: 0 },
+      { id: 25, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Sajadah Shalat' ?", options: ["سَجَّادَة", "مُصْحَف", "خِزَانَة", "سَاعَة"], correct: 0 },
+      { id: 26, type: "mc", q: "Kata 'صَالُون' di dalam rumah berarti...", options: ["Ruang Tamu", "Dapur", "Kamar Mandi", "Kamar Tidur"], correct: 0 },
+      { id: 27, type: "mc", q: "Tempat memasak di dalam rumah dinamakan...", options: ["مَطْبَخ", "صَالُون", "غُرْفَة", "مَسْجِد"], correct: 0 },
+      { id: 28, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Lemari Pakaian' ?", options: ["خِزَانَة", "مَكْتَب", "كُرْسِيّ", "نَافِذَة"], correct: 0 },
+      { id: 29, type: "mc", q: "Kata 'سَاعَة' artinya adalah...", options: ["Jam Dinding / Tangan", "Televisi", "Pintu", "Jendela"], correct: 0 },
+      { id: 30, type: "mc", q: "Manakah kata Bahasa Arab untuk 'Jendela Rumah' ?", options: ["نَافِذَة", "بَاب", "سَرِير", "مَكْتَب"], correct: 0 }
+    ];
+
+    // ==================== 4. DATA 30 SOAL TADRIB HIWAR (EXACTLY 30 QUESTIONS) ====================
+    const tadribHiwarData = [
+      { id: 1, type: "mc", q: "Dalam Hiwar 1, siapakah nama ayah Ali dan apa profesinya?", options: ["Adnan (Insinyur)", "Isa (Siswa)", "Ammar (Dokter)", "Saad (Guru)"], correct: 0 },
+      { id: 2, type: "mc", q: "Dalam Hiwar 1, apakah profesi dari Ibu Ali (Sayyidah Saidah)?", options: ["Guru (مُعَلِّمَة)", "Dokter (طَبِيبَة)", "Insinyur (مُهَنْدِسَة)", "Siswa (طَالِبَة)"], correct: 1 },
+      { id: 3, type: "mc", q: "Lengkapi dialog: عَلِيّ : هَذِهِ (...) أُسْرَتِي", options: ["صُورَةُ", "شَجَرَةُ", "غُرْفَةُ", "نَظَّارَةُ"], correct: 0 },
+      { id: 4, type: "mc", q: "Dalam Hiwar 2, siapakah nama Ayah Nabi Muhammad SAW?", options: ["عبد الله", "عبد المطلب", "العباس", "حمزة"], correct: 0 },
+      { id: 5, type: "mc", q: "Siapakah Kakek Nabi Muhammad SAW yang disebutkan dalam Hiwar 2?", options: ["عبد الله", "عبد المطلب", "أبو طالب", "إبراهيم"], correct: 1 },
+      { id: 6, type: "mc", q: "Siapakah Bibi (عَمَّة) dari Nabi Muhammad SAW?", options: ["آمنة", "فاطمة", "صفية", "رقية"], correct: 2 },
+      { id: 7, type: "mc", q: "Manakah di bawah ini yang BUKAN merupakan putra (ابْن) Rasulullah SAW?", options: ["القاسم", "عبد الله", "إبراهيم", "حمزة"], correct: 3 },
+      { id: 8, type: "mc", q: "Lengkapi dialog Hiwar 3: الأُمّ : سَعْدٌ فِي الْحَمَّامِ (...)", options: ["يَقْرَأُ الْقُرْآنَ", "يَتَوَضَّأُ", "تُصَلِّي", "يَنَامُ"], correct: 1 },
+      { id: 9, type: "mc", q: "Dalam Hiwar 3, di manakah Said berada dan apa yang sedang dilakukannya?", options: ["Di kamar mandi berwudhu", "Di kamar membaca Al-Qur'an", "Di mushalla shalat", "Di masjid"], correct: 1 },
+      { id: 10, type: "mc", q: "Dalam Hiwar 3, di manakah Saida berada?", options: ["فِي الْمُصَلَّى تُصَلِّي", "فِي الْحَمَّامِ تَتَوَضَّأُ", "فِي الْغُرْفَةِ", "فِي الْمَسْجِدِ"], correct: 0 },
+      { id: 11, type: "mc", q: "Apakah yang dicari oleh Ayah dan dibawakan oleh Saad?", options: ["النَّظَّارَةُ (Kacamata)", "الْمِعْطَفُ (Jas/Mantel)", "الْقُرْآنُ", "الصُّورَةُ"], correct: 1 },
+      { id: 12, type: "mc", q: "Apakah kata tunjuk yang tepat untuk benda 'النَّظَّارَةُ' ?", options: ["هَذَا", "هَذِهِ", "هُوَ", "أَيْنَ"], correct: 1 },
+      { id: 13, type: "mc", q: "Lengkapi frasa ajakan: (...) بِنَا إِلَى الْمَسْجِدِ", options: ["هَيَّا", "مَنْ", "مَا", "نَعَمْ"], correct: 0 },
+      { id: 14, type: "mc", q: "Respon saat seseorang mengucapkan 'السَّلَامُ عَلَيْكُمْ' adalah...", options: ["مَا شَاءَ اللَّهُ", "وَعَلَيْكُمُ السَّلَامُ", "هَيَّا بِنَا", "نَعَمْ"], correct: 1 },
+      { id: 15, type: "mc", q: "Sebutkan 3 putri Rasulullah SAW yang disebutkan dalam Hiwar 2!", options: ["فاطمة، رقية، زينب", "آمنة، صفية، خديجة", "عبلة، سعيدة، عائشة", "فاطمة، مريم، سارة"], correct: 0 },
+
+      // Additional 15 questions to reach 30 Tadrib Hiwar
+      { id: 16, type: "mc", q: "Pada momen apakah foto keluarga Ali dalam Hiwar 1 diambil?", options: ["Hari Raya (يَوْمِ الْعِيدِ)", "Hari Sekolah", "Hari Libur", "Hari Jumat"], correct: 0 },
+      { id: 17, type: "mc", q: "Siapakah yang bertugas mengajar Bahasa Arab dalam keluarga Ali?", options: ["Abla (عَبْلَة)", "Saidah (سَعِيدَة)", "Isa (عِيسَى)", "Ammar (عَمَّار)"], correct: 0 },
+      { id: 18, type: "mc", q: "Di manakah saudara Ali (Isa) menuntut ilmu?", options: ["Di SMA (الْمَدْرَسَةِ الثَّانَوِيَّةِ)", "Di SD", "Di Universitas", "Di Rumah"], correct: 0 },
+      { id: 19, type: "mc", q: "Siapakah dua orang tua yang berada di tengah foto keluarga Ali?", options: ["Kakek dan Nenek (جَدِّي وَجَدَّتِي)", "Ayah dan Ibu", "Paman dan Bibi", "Tetangga"], correct: 0 },
+      { id: 20, type: "mc", q: "Doa apakah yang diucapkan Ammar untuk keluarga Ali?", options: ["حَفِظَ اللَّهُ أُسْرَتَكَ مِنْ كُلِّ سُوءٍ", "شُكْرًا جَزِيلًا", "هَيَّا بِنَا", "مَا شَاءَ اللَّهُ"], correct: 0 },
+      { id: 21, type: "mc", q: "Siapakah nama ibu susuan Nabi Muhammad SAW yang disebutkan dalam Hiwar 2?", options: ["Halimah as-Sa'diyyah (حَلِيمَةُ السَّعْدِيَّةُ)", "Aminah", "Khadijah", "Fatimah"], correct: 0 },
+      { id: 22, type: "mc", q: "Siapakah paman Nabi Muhammad SAW yang bergelar Sayyidush Shuhada?", options: ["Hamzah (حَمْزَةُ)", "Al-Abbas", "Abu Talib", "Abu Lahab"], correct: 0 },
+      { id: 23, type: "mc", q: "Berapakah jumlah putra (ابْن) Rasulullah SAW yang disebutkan dalam Hiwar 2?", options: ["3 Putra (الْقَاسِم، عَبْدُ اللَّه، إِبْرَاهِيم)", "2 Putra", "4 Putra", "1 Putra"], correct: 0 },
+      { id: 24, type: "mc", q: "Siapakah paman Nabi Muhammad SAW yang mengasuhnya setelah kakeknya meninggal?", options: ["Abu Talib (أَبُو طَالِبٍ)", "Hamzah", "Al-Abbas", "Abu Lahab"], correct: 0 },
+      { id: 25, type: "mc", q: "Putri Rasulullah SAW yang bergelar Az-Zahra adalah...", options: ["Fatimah (فَاطِمَةُ)", "Ruqayyah", "Zainab", "Ummu Kulthum"], correct: 0 },
+      { id: 26, type: "mc", q: "Mengapa Ayah meminta jas/mantel (الْمِعْطَف) saat azan Subuh?", options: ["Karena udara di luar sangat dingin", "Karena hendak pergi ke sekolah", "Karena mau tidur", "Karena hujan deras"], correct: 0 },
+      { id: 27, type: "mc", q: "Di manakah Said menemukan kacamata (النَّظَّارَة) milik Ayah?", options: ["Di atas meja (عَلَى الْمَكْتَبِ)", "Di kamar mandi", "Di jalan", "Di lemari"], correct: 0 },
+      { id: 28, type: "mc", q: "Minuman apakah yang disiapkan oleh Ibu setelah shalat subuh?", options: ["Teh hangat (الشَّايَ الدَّافِئَ)", "Kopi panas", "Susu dingin", "Air es"], correct: 0 },
+      { id: 29, type: "mc", q: "Ke manakah Ayah mengajak Saad dan Said pergi shalat berjamaah?", options: ["Ke Masjid (إِلَى الْمَسْجِدِ)", "Ke Pasar", "Ke Sekolah", "Ke Lapangan"], correct: 0 },
+      { id: 30, type: "mc", q: "Apakah makna dari seruan 'الصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ' saat azan Subuh?", options: ["Shalat itu lebih baik daripada tidur", "Mari kita tidur", "Shalat itu wajib", "Selamat pagi"], correct: 0 }
+    ];
+
+    // Score Tracking
+    let scoreMufradat = 0;
+    let scoreHiwar = 0;
+    let currentFilteredMufradat = [...mufradatData];
+
+    // Initial Load
+    document.addEventListener("DOMContentLoaded", () => {
+      renderMufradatGrid();
+      renderDialogue(1);
+      renderDialogue(2);
+      renderDialogue(3);
+      renderTadribMufradat();
+      renderTadribHiwar();
+    });
+
+    // ==================== TAB NAVIGATION ====================
+    function switchTab(tabId) {
+      document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
+      document.getElementById(`tab-${tabId}`).classList.remove("hidden");
+
+      document.querySelectorAll(".nav-btn").forEach(btn => {
+        btn.classList.remove("bg-brand-dark", "text-white", "shadow-sm");
+        btn.classList.add("text-brand-muted");
+      });
+
+      const activeNavBtn = document.getElementById(`nav-${tabId}`);
+      if (activeNavBtn) {
+        activeNavBtn.classList.add("bg-brand-dark", "text-white", "shadow-sm");
+        activeNavBtn.classList.remove("text-brand-muted");
+      }
+
+      // Close mobile menu if open
+      document.getElementById("mobile-menu").classList.add("hidden");
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById("mobile-menu");
+      menu.classList.toggle("hidden");
+    }
+
+    // ==================== AUDIO PRONUNCIATION (SPEECH SYNTHESIS) ====================
+    function playAudio(text) {
+      if ('speechSynthesis' in window) {
+        window.speechSynthesis.cancel(); // Stop any ongoing speech
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = 'ar-SA';
+        utterance.rate = 0.85; // Slightly slower for clarity
+        window.speechSynthesis.speak(utterance);
+      } else {
+        alert("Browser Anda tidak mendukung Speech Synthesis Audio Arab.");
+      }
+    }
+
+    // ==================== MUFRADAT RENDER & FILTER ====================
+    function renderMufradatGrid() {
+      const grid = document.getElementById("mufradat-grid");
+      grid.innerHTML = "";
+
+      currentFilteredMufradat.forEach(item => {
+        const card = document.createElement("div");
+        card.className = "bg-white p-5 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all flex flex-col justify-between group";
+        card.innerHTML = `
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="w-8 h-8 rounded-full bg-brand-light-green text-brand-dark text-xs font-bold flex items-center justify-center">
+                ${item.id}
+              </span>
+              <button onclick="playAudio('${item.arabic}')" title="Putar Audio" class="w-9 h-9 rounded-full bg-[#F3EFE6] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-colors shadow-sm">
+                <i class="fa-solid fa-volume-high text-sm"></i>
+              </button>
+            </div>
+            
+            <div class="text-center py-2">
+              <h3 class="text-3xl font-bold text-brand-dark font-arabic mb-1 group-hover:scale-105 transition-transform">
+                ${item.arabic}
+              </h3>
+              <p class="text-xs font-semibold text-emerald-800 font-sans tracking-wide">
+                ${item.latin}
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 pt-3 border-t border-[#F0ECE1] flex items-center justify-between text-xs">
+            <span class="font-medium text-brand-muted">${item.indo}</span>
+            <i class="fa-solid ${item.icon} text-brand-dark/40"></i>
+          </div>
+        `;
+        grid.appendChild(card);
+      });
+    }
+
+    function filterMufradat(cat) {
+      document.querySelectorAll(".mufradat-filter-btn").forEach(btn => {
+        btn.classList.remove("bg-brand-dark", "text-white");
+        btn.classList.add("bg-[#EFECE4]", "text-brand-muted");
+      });
+      
+      const activeBtn = document.getElementById(`filter-${cat}-btn`);
+      if (activeBtn) {
+        activeBtn.classList.add("bg-brand-dark", "text-white");
+        activeBtn.classList.remove("bg-[#EFECE4]", "text-brand-muted");
+      }
+
+      if (cat === 'all') {
+        currentFilteredMufradat = [...mufradatData];
+      } else {
+        currentFilteredMufradat = mufradatData.filter(m => m.category === cat);
+      }
+      renderMufradatGrid();
+    }
+
+    // ==================== HIWAR RENDER & ROLEPLAY ====================
+    function selectHiwar(num) {
+      document.querySelectorAll(".hiwar-view").forEach(el => el.classList.add("hidden"));
+      document.getElementById(`hiwar-content-${num}`).classList.remove("hidden");
+
+      document.querySelectorAll(".hiwar-selector-btn").forEach(btn => {
+        btn.classList.remove("bg-brand-dark", "text-white");
+        btn.classList.add("bg-[#EFECE4]", "text-brand-muted");
+      });
+      document.getElementById(`hiwar-tab-${num}`).classList.add("bg-brand-dark", "text-white");
+    }
+
+    function renderDialogue(num) {
+      const container = document.getElementById(`dialogue-lines-${num}`);
+      container.innerHTML = "";
+
+      hiwarData[num].forEach((lineObj, idx) => {
+        const isRole1 = lineObj.role === 1;
+        const lineDiv = document.createElement("div");
+        lineDiv.className = `dialogue-line-item role-${lineObj.role} flex flex-col ${isRole1 ? 'items-start' : 'items-end'} transition-all`;
+        
+        lineDiv.innerHTML = `
+          <div class="max-w-2xl w-full p-4 sm:p-5 rounded-2xl border ${isRole1 ? 'bg-[#F7F5F0] border-[#E5E0D5] text-left' : 'bg-brand-light-green border-[#D2E4DC] text-right'} shadow-sm space-y-3">
+            <div class="flex items-center justify-between gap-4">
+              <span class="text-xs font-bold px-3 py-1 rounded-full ${isRole1 ? 'bg-emerald-800 text-white' : 'bg-amber-800 text-white'}">
+                ${lineObj.speaker}
+              </span>
+              <button onclick="playAudio('${lineObj.line}')" class="text-xs text-brand-dark hover:text-emerald-900 flex items-center gap-1 font-semibold">
+                <i class="fa-solid fa-volume-high"></i> Dengarkan Audio
+              </button>
+            </div>
+
+            <p class="dialogue-text text-2xl sm:text-3xl font-bold font-arabic text-brand-dark leading-loose py-1">
+              ${lineObj.line}
+            </p>
+
+            <p class="text-xs text-brand-muted italic font-sans border-t border-black/5 pt-2">
+              Arti: "${lineObj.translation}"
+            </p>
+          </div>
+        `;
+        container.appendChild(lineDiv);
+      });
+    }
+
+    function applyRoleplayFilter() {
+      const hideA = document.getElementById("toggle-roleplay-a").checked;
+      const hideB = document.getElementById("toggle-roleplay-b").checked;
+
+      document.querySelectorAll(".dialogue-line-item.role-1 .dialogue-text").forEach(el => {
+        if (hideA) {
+          el.classList.add("blur-sm", "select-none", "opacity-40");
+        } else {
+          el.classList.remove("blur-sm", "select-none", "opacity-40");
+        }
+      });
+
+      document.querySelectorAll(".dialogue-line-item.role-2 .dialogue-text").forEach(el => {
+        if (hideB) {
+          el.classList.add("blur-sm", "select-none", "opacity-40");
+        } else {
+          el.classList.remove("blur-sm", "select-none", "opacity-40");
+        }
+      });
+    }
+
+    // ==================== TADRIB MUFRADAT (30 SOAL) ====================
+    function renderTadribMufradat() {
+      const container = document.getElementById("quiz-mufradat-container");
+      container.innerHTML = "";
+
+      tadribMufradatData.forEach((q, idx) => {
+        const card = document.createElement("div");
+        card.className = "bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-4";
+        card.id = `q-m-${q.id}`;
+
+        let optionsHTML = q.options.map((opt, oIdx) => `
+          <label class="flex items-center gap-3 p-3.5 rounded-xl border border-[#E8E4D9] hover:bg-[#F9F8F5] cursor-pointer transition-colors text-sm font-medium">
+            <input type="radio" name="qm_${q.id}" value="${oIdx}" onchange="updateProgress('m')" class="text-brand-dark focus:ring-brand-dark">
+            <span class="${opt.match(/[\u0600-\u06FF]/) ? 'font-arabic text-xl text-brand-dark font-bold' : ''}">${opt}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-7 h-7 rounded-full bg-brand-dark text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+              ${idx + 1}
+            </span>
+            <h3 class="text-base font-bold text-brand-dark flex-grow">${q.q}</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            ${optionsHTML}
+          </div>
+
+          <div id="feedback-m-${q.id}" class="hidden p-3.5 rounded-xl text-xs font-bold mt-2"></div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // ==================== TADRIB HIWAR (30 SOAL) ====================
+    function renderTadribHiwar() {
+      const container = document.getElementById("quiz-hiwar-container");
+      container.innerHTML = "";
+
+      tadribHiwarData.forEach((q, idx) => {
+        const card = document.createElement("div");
+        card.className = "bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-4";
+        card.id = `q-h-${q.id}`;
+
+        let optionsHTML = q.options.map((opt, oIdx) => `
+          <label class="flex items-center gap-3 p-3.5 rounded-xl border border-[#E8E4D9] hover:bg-[#F9F8F5] cursor-pointer transition-colors text-sm font-medium">
+            <input type="radio" name="qh_${q.id}" value="${oIdx}" onchange="updateProgress('h')" class="text-brand-dark focus:ring-brand-dark">
+            <span class="${opt.match(/[\u0600-\u06FF]/) ? 'font-arabic text-xl text-brand-dark font-bold' : ''}">${opt}</span>
+          </label>
+        `).join("");
+
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <span class="w-7 h-7 rounded-full bg-amber-800 text-white text-xs font-bold flex items-center justify-center flex-shrink-0">
+              ${idx + 1}
+            </span>
+            <h3 class="text-base font-bold text-brand-dark flex-grow">${q.q}</h3>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+            ${optionsHTML}
+          </div>
+
+          <div id="feedback-h-${q.id}" class="hidden p-3.5 rounded-xl text-xs font-bold mt-2"></div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    // ==================== PROGRESS & SCORE CHECKING ====================
+    function updateProgress(type) {
+      if (type === 'm') {
+        let answered = 0;
+        tadribMufradatData.forEach(q => {
+          if (document.querySelector(`input[name="qm_${q.id}"]:checked`)) answered++;
+        });
+        document.getElementById("tadrib-m-progress").innerText = answered;
+      } else {
+        let answered = 0;
+        tadribHiwarData.forEach(q => {
+          if (document.querySelector(`input[name="qh_${q.id}"]:checked`)) answered++;
+        });
+        document.getElementById("tadrib-h-progress").innerText = answered;
+      }
+    }
+
+    function checkAllTadribMufradat() {
+      let correctCount = 0;
+      tadribMufradatData.forEach(q => {
+        const selected = document.querySelector(`input[name="qm_${q.id}"]:checked`);
+        const fb = document.getElementById(`feedback-m-${q.id}`);
+        fb.classList.remove("hidden", "bg-emerald-100", "text-emerald-900", "bg-rose-100", "text-rose-900");
+
+        if (selected && parseInt(selected.value) === q.correct) {
+          correctCount++;
+          fb.classList.add("bg-emerald-100", "text-emerald-900");
+          fb.innerHTML = `<i class="fa-solid fa-circle-check mr-1.5 text-emerald-700"></i> Jawaban Benar! (Tepat)`;
+        } else {
+          fb.classList.add("bg-rose-100", "text-rose-900");
+          fb.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1.5 text-rose-700"></i> Jawaban Kurang Tepat. Jawaban benar: <strong>${q.options[q.correct]}</strong>`;
+        }
+      });
+
+      scoreMufradat = Math.round((correctCount / 30) * 100);
+      document.getElementById("score-mufradat-display").innerText = scoreMufradat;
+      updateGlobalScore();
+      alert(`Pemeriksaan Selesai! Skor Tadrib Mufradat Anda: ${scoreMufradat} / 100 (${correctCount} dari 30 soal benar)`);
+    }
+
+    function checkAllTadribHiwar() {
+      let correctCount = 0;
+      tadribHiwarData.forEach(q => {
+        const selected = document.querySelector(`input[name="qh_${q.id}"]:checked`);
+        const fb = document.getElementById(`feedback-h-${q.id}`);
+        fb.classList.remove("hidden", "bg-emerald-100", "text-emerald-900", "bg-rose-100", "text-rose-900");
+
+        if (selected && parseInt(selected.value) === q.correct) {
+          correctCount++;
+          fb.classList.add("bg-emerald-100", "text-emerald-900");
+          fb.innerHTML = `<i class="fa-solid fa-circle-check mr-1.5 text-emerald-700"></i> Jawaban Benar! (Tepat)`;
+        } else {
+          fb.classList.add("bg-rose-100", "text-rose-900");
+          fb.innerHTML = `<i class="fa-solid fa-circle-xmark mr-1.5 text-rose-700"></i> Jawaban Kurang Tepat. Jawaban benar: <strong>${q.options[q.correct]}</strong>`;
+        }
+      });
+
+      scoreHiwar = Math.round((correctCount / 30) * 100);
+      document.getElementById("score-hiwar-display").innerText = scoreHiwar;
+      updateGlobalScore();
+      alert(`Pemeriksaan Selesai! Skor Tadrib Hiwar Anda: ${scoreHiwar} / 100 (${correctCount} dari 30 soal benar)`);
+    }
+
+    function updateGlobalScore() {
+      const avg = Math.round((scoreMufradat + scoreHiwar) / 2);
+      document.getElementById("global-score-badge").innerText = avg;
+    }
+
+    function resetTadribMufradat() {
+      tadribMufradatData.forEach(q => {
+        const radios = document.getElementsByName(`qm_${q.id}`);
+        radios.forEach(r => r.checked = false);
+        const fb = document.getElementById(`feedback-m-${q.id}`);
+        fb.classList.add("hidden");
+      });
+      scoreMufradat = 0;
+      document.getElementById("score-mufradat-display").innerText = "0";
+      document.getElementById("tadrib-m-progress").innerText = "0";
+      updateGlobalScore();
+    }
+
+    function resetTadribHiwar() {
+      tadribHiwarData.forEach(q => {
+        const radios = document.getElementsByName(`qh_${q.id}`);
+        radios.forEach(r => r.checked = false);
+        const fb = document.getElementById(`feedback-h-${q.id}`);
+        fb.classList.add("hidden");
+      });
+      scoreHiwar = 0;
+      document.getElementById("score-hiwar-display").innerText = "0";
+      document.getElementById("tadrib-h-progress").innerText = "0";
+      updateGlobalScore();
+    }
+  </script>
+
+</body>
+</html>
