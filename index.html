@@ -425,6 +425,9 @@
           <!-- SVG Interactive Family Tree Diagram -->
           <div class="bg-gradient-to-b from-[#F6F4ED] to-[#FFFFFF] p-6 rounded-2xl border border-[#E6E0D0] text-center space-y-4 shadow-sm">
             <span class="inline-block px-3 py-1 bg-amber-100 text-amber-900 text-xs font-bold rounded-full">Diagram Pohon Keluarga (شَجَرَةُ أُسْرَةِ الرَّسُولِ)</span>
+            <div class="max-w-md mx-auto rounded-2xl overflow-hidden border-2 border-amber-600 shadow-md my-2">
+              <img src="pohon_keluarga.jpg" alt="Pohon Nasab Keluarga Rasulullah SAW" class="w-full h-auto object-contain">
+            </div>
             <div class="w-full overflow-x-auto custom-scrollbar py-4">
               <!-- Visual SVG MindMap / Tree Diagram -->
               <div class="min-w-[650px] mx-auto flex flex-col items-center gap-6">
@@ -614,10 +617,10 @@
     const mufradatData = [
       // --- TEMA 1: KELUARGA (20 ITEMS WITH SENTENCE EXAMPLES) ---
       { id: 1, arabic: "أُسْرَة", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "keluarga_picnic.jpg", sentenceArabic: "هَذِهِ أُسْرَتِي السَّعِيدَةُ.", sentenceIndo: "Ini adalah keluargaku yang bahagia." },
-      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَنْظُرُ إِلَى شَجَرَةِ الأُسْرَةِ فِي الأَلْبُومِ.", sentenceIndo: "Aku melihat pohon keluarga di dalam album." },
-      { id: 3, arabic: "جَدّ", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدِّي يَقْرَأُ الْقُرْآنَ فِي الصَّبَاحِ.", sentenceIndo: "Kakekku membaca Al-Qur'an di pagi hari." },
-      { id: 4, arabic: "جَدَّة", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدَّتِي تُحِبُّ الأَحْفَادَ كَثِيرًا.", sentenceIndo: "Nenekku sangat menyayangi cucu-cucunya." },
-      { id: 5, arabic: "وَالِد / أَب", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "وَالِدِي يَعْمَلُ فِي الْمَكْتَبِ بِاجْتِهَادٍ.", sentenceIndo: "Ayahku bekerja di kantor dengan sungguh-sungguh." },
+      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "pohon_keluarga.jpg", sentenceArabic: "أَنْظُرُ إِلَى شَجَرَةِ الأُسْرَةِ فِي الأَلْبُومِ.", sentenceIndo: "Aku melihat pohon keluarga di dalam album." },
+      { id: 3, arabic: "جَدّ", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "kakek.jpg", sentenceArabic: "جَدِّي يَقْرَأُ الْقُرْآنَ فِي الصَّبَاحِ.", sentenceIndo: "Kakekku membaca Al-Qur'an di pagi hari." },
+      { id: 4, arabic: "جَدَّة", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "nenek.jpg", sentenceArabic: "جَدَّتِي تُحِبُّ الأَحْفَادَ كَثِيرًا.", sentenceIndo: "Nenekku sangat menyayangi cucu-cucunya." },
+      { id: 5, arabic: "وَالِد / أَب", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "ayah.jpg", sentenceArabic: "وَالِدِي يَعْمَلُ فِي الْمَكْتَبِ بِاجْتِهَادٍ.", sentenceIndo: "Ayahku bekerja di kantor dengan sungguh-sungguh." },
       { id: 6, arabic: "وَالِدَة / أُمّ", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "ibu.jpg", sentenceArabic: "وَالِدَتِي تُعِدُّ الطَّعَامَ اللَّذِيذَ.", sentenceIndo: "Ibuku menyiapkan makanan yang lezat." },
       { id: 7, arabic: "أَخ", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "saudara_laki.jpg", sentenceArabic: "أَخِي يَلْعَبُ كُرَةَ الْقَدَمِ فِي الْمَلْعَبِ.", sentenceIndo: "Saudaraku bermain sepak bola di lapangan." },
       { id: 8, arabic: "أُخْت", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "saudara_perempuan.jpg", sentenceArabic: "أُخْتِي تُذَاكِرُ الدُّرُوسَ فِي الْغُرْفَةِ.", sentenceIndo: "Saudariku mengulang pelajaran di kamar." },
