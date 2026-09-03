@@ -59,20 +59,24 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* 3D Flip Flashcard Animations */
+    /* 3D Flip Flashcard Animations with Full Mobile WebKit Support */
     .flip-card {
+      -webkit-perspective: 1000px;
       perspective: 1000px;
-      min-height: 400px;
+      min-height: 420px;
+      height: 420px;
     }
     .flip-card-inner {
       position: relative;
       width: 100%;
       height: 100%;
-      min-height: 400px;
+      -webkit-transition: -webkit-transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+      -webkit-transform-style: preserve-3d;
       transform-style: preserve-3d;
     }
     .flip-card.is-flipped .flip-card-inner {
+      -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
     }
     .flip-card-front, .flip-card-back {
@@ -81,12 +85,14 @@
       left: 0;
       width: 100%;
       height: 100%;
-      min-height: 400px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 1rem;
+      -webkit-transform-style: preserve-3d;
+      transform-style: preserve-3d;
     }
     .flip-card-back {
+      -webkit-transform: rotateY(180deg);
       transform: rotateY(180deg);
     }
   </style>
@@ -824,6 +830,20 @@
       renderTadribHiwar();
     });
 
+    // Mobile Image Fallback Handler
+    function handleImgError(img, id) {
+      img.onerror = null;
+      const item = mufradatData.find(m => m.id === id);
+      const icon = item ? item.icon : 'fa-image';
+      const indo = item ? item.indo : '';
+      img.parentElement.innerHTML = `
+        <div class="w-full h-full bg-gradient-to-br from-emerald-800 to-teal-900 text-white flex flex-col items-center justify-center p-3 text-center space-y-1.5">
+          <i class="fa-solid ${icon} text-3xl text-amber-300"></i>
+          <span class="text-xs font-bold font-sans">${indo}</span>
+        </div>
+      `;
+    }
+
     // ==================== SIDEBAR HAMBURGER CONTROLS ====================
     function openSidebarMenu() {
       const drawer = document.getElementById("sidebar-drawer");
@@ -910,7 +930,7 @@
           <div class="flip-card-inner relative w-full h-full">
             
             <!-- FRONT SIDE -->
-            <div class="flip-card-front bg-white p-5 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all flex flex-col justify-between overflow-hidden">
+            <div class="flip-card-front bg-white p-5 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all flex flex-col justify-between">
               <div>
                 <!-- Top badge + Audio button -->
                 <div class="flex items-center justify-between mb-3">
@@ -925,7 +945,7 @@
                 <!-- PHOTO CONTAINER -->
                 <div class="w-full h-40 rounded-xl overflow-hidden bg-[#F2EFE8] mb-3 border border-[#DCD6C8] relative shadow-inner flex items-center justify-center">
                   <img src="${item.img}" alt="${item.indo}" loading="lazy" 
-                    onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-emerald-800 to-teal-900 text-white flex flex-col items-center justify-center p-3 text-center space-y-1.5\'><i class=\'fa-solid ${item.icon} text-3xl text-amber-300\'></i><span class=\'text-xs font-bold font-sans\'>${item.indo}</span></div>';" 
+                    onerror="handleImgError(this, ${item.id})" 
                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
                 </div>
 
@@ -949,7 +969,7 @@
             </div>
 
             <!-- BACK SIDE (FLIPPED - SENTENCE EXAMPLE) -->
-            <div class="flip-card-back bg-gradient-to-b from-[#F6F4ED] to-[#FFFFFF] p-5 rounded-2xl border-2 border-emerald-700 shadow-md flex flex-col justify-between overflow-hidden">
+            <div class="flip-card-back bg-gradient-to-b from-[#F6F4ED] to-[#FFFFFF] p-5 rounded-2xl border-2 border-emerald-700 shadow-md flex flex-col justify-between">
               <div>
                 <!-- Top Header of Back Card -->
                 <div class="flex items-center justify-between mb-3 border-b border-emerald-200/60 pb-2">
