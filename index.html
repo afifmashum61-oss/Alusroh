@@ -62,11 +62,13 @@
     /* 3D Flip Flashcard Animations */
     .flip-card {
       perspective: 1000px;
+      min-height: 400px;
     }
     .flip-card-inner {
       position: relative;
       width: 100%;
       height: 100%;
+      min-height: 400px;
       transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
       transform-style: preserve-3d;
     }
@@ -79,6 +81,7 @@
       left: 0;
       width: 100%;
       height: 100%;
+      min-height: 400px;
       -webkit-backface-visibility: hidden;
       backface-visibility: hidden;
       border-radius: 1rem;
@@ -277,9 +280,9 @@
           <div class="w-12 h-12 rounded-xl bg-brand-light-green text-brand-dark flex items-center justify-center font-bold text-xl mb-5 group-hover:scale-110 transition-transform">
             <i class="fa-solid fa-rotate text-brand-dark"></i>
           </div>
-          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul 1 (Konsep Baru Flip 3D)</span>
+          <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul 1 (Kartu Flip 3D)</span>
           <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Kartu Flip Contoh Kalimat</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">Klik setiap kartu untuk membalik visual dan mempelajari contoh kalimat lengkap (Arab, Latin & Terjemahan) beserta Audio.</p>
+          <p class="text-sm text-brand-muted leading-relaxed">Klik setiap kartu untuk membalik visual dan mempelajari contoh kalimat lengkap (Arab & Terjemahan) beserta Audio.</p>
           <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
             Pelajari Kartu Flip <i class="fa-solid fa-chevron-right text-[10px]"></i>
           </div>
@@ -609,70 +612,70 @@
     // ==================== 1. DATA 60 MUFRADAT WITH SENTENCE EXAMPLES FOR FLIP CARDS ====================
     const mufradatData = [
       // --- TEMA 1: KELUARGA (20 ITEMS WITH SENTENCE EXAMPLES) ---
-      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "keluarga_picnic.jpg", sentenceArabic: "هَذِهِ أُسْرَتِي السَّعِيدَةُ.", sentenceLatin: "Hadhihi usrati as-sa'idah.", sentenceIndo: "Ini adalah keluargaku yang bahagia." },
-      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَنْظُرُ إِلَى شَجَرَةِ الأُسْرَةِ فِي الأَلْبُومِ.", sentenceLatin: "Anzhuru ila shajaratil 'usrati fil-album.", sentenceIndo: "Aku melihat pohon keluarga di dalam album." },
-      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدِّي يَقْرَأُ الْقُرْآنَ فِي الصَّبَاحِ.", sentenceLatin: "Jaddi yaqra'ul-Qur'ana fis-sabah.", sentenceIndo: "Kakekku membaca Al-Qur'an di pagi hari." },
-      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدَّتِي تُحِبُّ الأَحْفَادَ كَثِيرًا.", sentenceLatin: "Jaddati tuhibbul-ahfada kathira.", sentenceIndo: "Nenekku sangat menyayangi cucu-cucunya." },
-      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "وَالِدِي يَعْمَلُ فِي الْمَكْتَبِ بِاجْتِهَادٍ.", sentenceLatin: "Walidi ya'malu fil-maktabi bijtihad.", sentenceIndo: "Ayahku bekerja di kantor dengan sungguh-sungguh." },
-      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80", sentenceArabic: "وَالِدَتِي تُعِدُّ الطَّعَامَ اللَّذِيذَ.", sentenceLatin: "Walidati tu'iddut-ta'amal-ladhidh.", sentenceIndo: "Ibuku menyiapkan makanan yang lezat." },
-      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَخِي يَلْعَبُ كُرَةَ الْقَدَمِ فِي الْمَلْعَبِ.", sentenceLatin: "Akhi yal'abu kuratal-qadami fil-mal'ab.", sentenceIndo: "Saudaraku bermain sepak bola di lapangan." },
-      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أُخْتِي تُذَاكِرُ الدُّرُوسَ فِي الْغُرْفَةِ.", sentenceLatin: "Ukhti tudhakirud-durusa fil-ghurfah.", sentenceIndo: "Saudariku mengulang pelajaran di kamar." },
-      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child", img: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "هَذَا ابْنِي الصَّغِيرُ الْجَمِيلُ.", sentenceLatin: "Hadhabni as-saghirul-jamil.", sentenceIndo: "Ini putra kecilku yang tampan." },
-      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "ابْنَتِي تَلْعَبُ فِي الْحَدِيقَةِ.", sentenceLatin: "Ibnati tal'abu fil-hadiqah.", sentenceIndo: "Putriku bermain di taman." },
-      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "عَمِّي يَزُورُنَا فِي يَوْمِ الْجُمُعَةِ.", sentenceLatin: "'Ammi yazuruna fi yaumil-jumu'ah.", sentenceIndo: "Pamanku mengunjungi kami di hari Jumat." },
-      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80", sentenceArabic: "عَمَّتِي تُحْضِرُ الْهَدَايَا فِي الْعِيدِ.", sentenceLatin: "'Ammati tuhdirul-hadaya fil-'id.", sentenceIndo: "Bibiku membawakan hadiah saat hari raya." },
-      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "خَالِي يَعِيشُ فِي الْمَدِينَةِ الكَبِيرَةِ.", sentenceLatin: "Khali ya'ishu fil-madinatil-kabirah.", sentenceIndo: "Pamanku tinggal di kota besar." },
-      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80", sentenceArabic: "خَالَتِي تُحِبُّ الْخِيَاطَةَ وَالرَّسْمَ.", sentenceLatin: "Khalati tuhibbul-khiyata war-rasm.", sentenceIndo: "Bibiku menyukai menjahit dan menggambar." },
-      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80", sentenceArabic: "زَوْجِي يَعْمَلُ مُهَنْدِسًا مَاهِرًا.", sentenceLatin: "Zawji ya'malu muhandisan mahira.", sentenceIndo: "Suamiku bekerja sebagai insinyur yang handal." },
-      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "زَوْجَتِي طَبِيبَةٌ كَرِيمَةٌ.", sentenceLatin: "Zawjati tabibatun karimah.", sentenceIndo: "Istriku adalah seorang dokter yang mulia." },
-      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الْجَدُّ يَلْعَبُ مَعَ حَفِيدِهِ الصَّغِيرِ.", sentenceLatin: "Al-jaddu yal'abu ma'a hafidihi as-saghir.", sentenceIndo: "Kakek bermain bersama cucu laki-lakinya." },
-      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الْجَدَّةُ تَقْرَأُ القِصَّةَ لِحَفِيدَتِهَا.", sentenceLatin: "Al-jaddatu taqra'ul-qissata li-hafidatiha.", sentenceIndo: "Nenek membacakan cerita untuk cucu perempuannya." },
-      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نَجْتَمِعُ مَعَ الأَقَارِبِ فِي الأَعْيَادِ.", sentenceLatin: "Najtami'u ma'al-aqaribi fil-a'yad.", sentenceIndo: "Kami berkumpul bersama kerabat pada hari raya." },
-      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80", sentenceArabic: "بَيْتُ الأُسْرَةِ وَاسِعٌ وَنَظِيفٌ.", sentenceLatin: "Baytul-'usrati wasi'un wa nadhif.", sentenceIndo: "Rumah keluarga itu luas dan bersih." },
+      { id: 1, arabic: "أُسْرَة", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "keluarga_picnic.jpg", sentenceArabic: "هَذِهِ أُسْرَتِي السَّعِيدَةُ.", sentenceIndo: "Ini adalah keluargaku yang bahagia." },
+      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَنْظُرُ إِلَى شَجَرَةِ الأُسْرَةِ فِي الأَلْبُومِ.", sentenceIndo: "Aku melihat pohon keluarga di dalam album." },
+      { id: 3, arabic: "جَدّ", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1545167622-3a6ac756afa4?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدِّي يَقْرَأُ الْقُرْآنَ فِي الصَّبَاحِ.", sentenceIndo: "Kakekku membaca Al-Qur'an di pagi hari." },
+      { id: 4, arabic: "جَدَّة", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "جَدَّتِي تُحِبُّ الأَحْفَادَ كَثِيرًا.", sentenceIndo: "Nenekku sangat menyayangi cucu-cucunya." },
+      { id: 5, arabic: "وَالِد / أَب", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "وَالِدِي يَعْمَلُ فِي الْمَكْتَبِ بِاجْتِهَادٍ.", sentenceIndo: "Ayahku bekerja di kantor dengan sungguh-sungguh." },
+      { id: 6, arabic: "وَالِدَة / أُمّ", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80", sentenceArabic: "وَالِدَتِي تُعِدُّ الطَّعَامَ اللَّذِيذَ.", sentenceIndo: "Ibuku menyiapkan makanan yang lezat." },
+      { id: 7, arabic: "أَخ", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَخِي يَلْعَبُ كُرَةَ الْقَدَمِ فِي الْمَلْعَبِ.", sentenceIndo: "Saudaraku bermain sepak bola di lapangan." },
+      { id: 8, arabic: "أُخْت", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أُخْتِي تُذَاكِرُ الدُّرُوسَ فِي الْغُرْفَةِ.", sentenceIndo: "Saudariku mengulang pelajaran di kamar." },
+      { id: 9, arabic: "ابْن", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child", img: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "هَذَا ابْنِي الصَّغِيرُ الْجَمِيلُ.", sentenceIndo: "Ini putra kecilku yang tampan." },
+      { id: 10, arabic: "ابْنَة", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "ابْنَتِي تَلْعَبُ فِي الْحَدِيقَةِ.", sentenceIndo: "Putriku bermain di taman." },
+      { id: 11, arabic: "عَمّ", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "عَمِّي يَزُورُنَا فِي يَوْمِ الْجُمُعَةِ.", sentenceIndo: "Pamanku mengunjungi kami di hari Jumat." },
+      { id: 12, arabic: "عَمَّة", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80", sentenceArabic: "عَمَّتِي تُحْضِرُ الْهَدَايَا فِي الْعِيدِ.", sentenceIndo: "Bibiku membawakan hadiah saat hari raya." },
+      { id: 13, arabic: "خَال", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "خَالِي يَعِيشُ فِي الْمَدِينَةِ الكَبِيرَةِ.", sentenceIndo: "Pamanku tinggal di kota besar." },
+      { id: 14, arabic: "خَالَة", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80", sentenceArabic: "خَالَتِي تُحِبُّ الْخِيَاطَةَ وَالرَّسْمَ.", sentenceIndo: "Bibiku menyukai menjahit dan menggambar." },
+      { id: 15, arabic: "زَوْج", indo: "Suami", category: "keluarga", icon: "fa-user-group", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80", sentenceArabic: "زَوْجِي يَعْمَلُ مُهَنْدِسًا مَاهِرًا.", sentenceIndo: "Suamiku bekerja sebagai insinyur yang handal." },
+      { id: 16, arabic: "زَوْجَة", indo: "Istri", category: "keluarga", icon: "fa-heart", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "زَوْجَتِي طَبِيبَةٌ كَرِيمَةٌ.", sentenceIndo: "Istriku adalah seorang dokter yang mulia." },
+      { id: 17, arabic: "حَفِيد", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الْجَدُّ يَلْعَبُ مَعَ حَفِيدِهِ الصَّغِيرِ.", sentenceIndo: "Kakek bermain bersama cucu laki-lakinya." },
+      { id: 18, arabic: "حَفِيدَة", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الْجَدَّةُ تَقْرَأُ القِصَّةَ لِحَفِيدَتِهَا.", sentenceIndo: "Nenek membacakan cerita untuk cucu perempuannya." },
+      { id: 19, arabic: "أَقَارِب", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نَجْتَمِعُ مَعَ الأَقَارِبِ فِي الأَعْيَادِ.", sentenceIndo: "Kami berkumpul bersama kerabat pada hari raya." },
+      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80", sentenceArabic: "بَيْتُ الأُسْرَةِ وَاسِعٌ وَنَظِيفٌ.", sentenceIndo: "Rumah keluarga itu luas dan bersih." },
 
       // --- TEMA 2: PROFESI (20 ITEMS WITH SENTENCE EXAMPLES) ---
-      { id: 21, arabic: "مُهَنْدِس", latin: "Muhandis", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُهَنْدِسُ يَبْنِي الْبُيُوتَ وَالمَسَاجِدَ.", sentenceLatin: "Al-muhandisu yabnil-buyuta wal-masajid.", sentenceIndo: "Insinyur itu membangun rumah dan masjid." },
-      { id: 22, arabic: "مُهَنْدِسَة", latin: "Muhandisah", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُهَنْدِسَةُ تُصَمِّمُ المَبَانِيَ الحَدِيثَةَ.", sentenceLatin: "Al-muhandisatu tusam mimul-mabaniyal-hadithah.", sentenceIndo: "Insinyur perempuan itu merancang bangunan modern." },
-      { id: 23, arabic: "طَبِيب", latin: "Thabib", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّبِيبُ يُعَالِجُ المَرْضَى فِي المُسْتَشْفَى.", sentenceLatin: "At-tabibu yu'alijul-marda fil-mustashfa.", sentenceIndo: "Dokter itu mengobati pasien di rumah sakit." },
-      { id: 24, arabic: "طَبِيبَة", latin: "Thabibah", indo: "Dokter (Perempuan)", category: "profesi", icon: "fa-stethoscope", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّبِيبَةُ تَفْحَصُ المَرِيضَةَ بِعِنَايَةٍ.", sentenceLatin: "At-tabibatu tafhasul-maridata bi-'inayah.", sentenceIndo: "Dokter perempuan itu memeriksa pasien dengan cermat." },
-      { id: 25, arabic: "مُعَلِّم", latin: "Mu'allim", indo: "Guru (Laki-laki)", category: "profesi", icon: "fa-chalkboard-user", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُعَلِّمُ يُعَلِّمُ الطُّلَّابَ فِي الفَصْلِ.", sentenceLatin: "Al-mu'allimu yu'allimut-tullaba fil-fasl.", sentenceIndo: "Guru itu mengajar para siswa di kelas." },
-      { id: 26, arabic: "مُعَلِّمَة", latin: "Mu'allimah", indo: "Guru (Perempuan)", category: "profesi", icon: "fa-graduation-cap", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُعَلِّمَةُ تَشْرَحُ الدَّرْسَ بِوُضُوحٍ.", sentenceLatin: "Al-mu'allimatu tashrahud-darsa bi-wuduh.", sentenceIndo: "Guru perempuan itu menjelaskan pelajaran dengan jelas." },
-      { id: 27, arabic: "طَالِب", latin: "Thalib", indo: "Siswa (Laki-laki)", category: "profesi", icon: "fa-book-reader", img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّالِبُ يَقْرَأُ الكِتَابَ فِي المَكْتَبَةِ.", sentenceLatin: "At-talibu yaqra'ul-kitaba fil-maktabah.", sentenceIndo: "Siswa itu membaca buku di perpustakaan." },
-      { id: 28, arabic: "طَالِبَة", latin: "Thalibah", indo: "Siswi (Perempuan)", category: "profesi", icon: "fa-user-graduate", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّالِبَةُ تَكْتُبُ الوَاجِبَ المَنْزِلِيَّ.", sentenceLatin: "At-talibatu taktubul-wajibal-manziliyy.", sentenceIndo: "Siswi itu menulis pekerjaan rumah." },
-      { id: 29, arabic: "مُرَبِّيَة", latin: "Murabbiyah", indo: "Pengasuh / Pendidik", category: "profesi", icon: "fa-person-shelter", img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُرَبِّيَةُ تَهْتَمُّ بِالأَطْفَالِ بِحُبٍّ.", sentenceLatin: "Al-murabbiyatu tahtammu bil-atfali bi-hubb.", sentenceIndo: "Pengasuh itu merawat anak-anak dengan kasih sayang." },
-      { id: 30, arabic: "تَاجِر", latin: "Taajir", indo: "Pedagang (Laki-laki)", category: "profesi", icon: "fa-store", img: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=600&q=80", sentenceArabic: "التَّاجِرُ يَبِيعُ الفَوَاكِهَ فِي السُّوقِ.", sentenceLatin: "At-tajiru yabi'ul-fawakiha fis-suq.", sentenceIndo: "Pedagang itu menjual buah-buahan di pasar." },
-      { id: 31, arabic: "تَاجِرَة", latin: "Taajirah", indo: "Pedagang (Perempuan)", category: "profesi", icon: "fa-shop", img: "https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=600&q=80", sentenceArabic: "التَّاجِرَةُ تَبِيعُ المَلَابِسَ الْجَمِيلَةَ.", sentenceLatin: "At-tajiratu tabi'ul-malabisal-jamilah.", sentenceIndo: "Pedagang perempuan itu menjual pakaian indah." },
-      { id: 32, arabic: "مُوَظَّف", latin: "Muwazhphaf", indo: "Pegawai (Laki-laki)", category: "profesi", icon: "fa-briefcase", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُوَظَّفُ يَعْمَلُ فِي المَكْتَبِ صَبَاحًا.", sentenceLatin: "Al-muwaddhafu ya'malu fil-maktabi sabaha.", sentenceIndo: "Pegawai itu bekerja di kantor pada pagi hari." },
-      { id: 33, arabic: "مُوَظَّفَة", latin: "Muwazhphafah", indo: "Pegawai (Perempuan)", category: "profesi", icon: "fa-building-user", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُوَظَّفَةُ تُنَظِّمُ المَلَفَّاتِ فِي الشَّرِكَةِ.", sentenceLatin: "Al-muwaddhafatu tunaddimul-malaffati fish-sharikah.", sentenceIndo: "Pegawai perempuan itu merapikan berkas di perusahaan." },
-      { id: 34, arabic: "سَائِق", latin: "Saa'iq", indo: "Sopir / Pengemudi", category: "profesi", icon: "fa-car", img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "السَّائِقُ يَقُودُ السَّيَّارَةَ بِحَذَرٍ.", sentenceLatin: "As-sa'iqu yaqudus-sayyarata bi-hadhar.", sentenceIndo: "Sopir itu mengendarai mobil dengan hati-hati." },
-      { id: 35, arabic: "خَادِم", latin: "Khaadim", indo: "Asisten Rumah Tangga", category: "profesi", icon: "fa-hand-holding-heart", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الخَادِمُ يُنَظِّفُ البَيْتَ كُلَّ يَوْمٍ.", sentenceLatin: "Al-khadimu yunaddiful-bayta kulla yaum.", sentenceIndo: "Asisten rumah tangga merapikan rumah setiap hari." },
-      { id: 36, arabic: "شُرْطِيّ", latin: "Shurthiyy", indo: "Polisi", category: "profesi", icon: "fa-user-shield", img: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الشُّرْطِيُّ يَحْمِي الأَمْنَ فِي المَدِينَةِ.", sentenceLatin: "Ash-shurtiyyu yahmiyul-amna fil-madinah.", sentenceIndo: "Polisi menjaga keamanan di kota." },
-      { id: 37, arabic: "جُنْدِيّ", latin: "Jundiyy", indo: "Tentara / Prajurit", category: "profesi", icon: "fa-person-military-rifle", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الجُنْدِيُّ يُدَافِعُ عَنِ الوَطَنِ بِشَجَاعَةٍ.", sentenceLatin: "Al-jundiyyu yudafi'u 'anil-watani bi-shaja'ah.", sentenceIndo: "Prajurit itu membela tanah air dengan keberanian." },
-      { id: 38, arabic: "مُصَوِّر", latin: "Mushawwir", indo: "Fotografer", category: "profesi", icon: "fa-camera", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُصَوِّرُ يَلْتَقِطُ الصُّوَرَ الرَّائِحَةَ.", sentenceLatin: "Al-musawwiru yaltaqitus-suwarar-ra'i'ah.", sentenceIndo: "Fotografer itu mengambil foto-foto yang indah." },
-      { id: 39, arabic: "مُمَرِّضَة", latin: "Mumarrizhah", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical", img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُمَرِّضَةُ تُسَاعِدُ الطَّبِيبَ فِي العِيَادَةِ.", sentenceLatin: "Al-mumarridatu tusa'idut-tabiba fil-'iyadah.", sentenceIndo: "Perawat perempuan itu membantu dokter di klinik." },
-      { id: 40, arabic: "مَدِير", latin: "Madiir", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المَدِيرُ يُدِيرُ المَدْرَسَةَ بِحِكْمَةٍ.", sentenceLatin: "Al-madiru yudirul-madrasata bi-hikmah.", sentenceIndo: "Kepala sekolah mengelola sekolah dengan bijaksana." },
+      { id: 21, arabic: "مُهَنْدِس", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُهَنْدِسُ يَبْنِي الْبُيُوتَ وَالمَسَاجِدَ.", sentenceIndo: "Insinyur itu membangun rumah dan masjid." },
+      { id: 22, arabic: "مُهَنْدِسَة", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass", img: "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُهَنْدِسَةُ تُصَمِّمُ المَبَانِيَ الحَدِيثَةَ.", sentenceIndo: "Insinyur perempuan itu merancang bangunan modern." },
+      { id: 23, arabic: "طَبِيب", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّبِيبُ يُعَالِجُ المَرْضَى فِي المُسْتَشْفَى.", sentenceIndo: "Dokter itu mengobati pasien di rumah sakit." },
+      { id: 24, arabic: "طَبِيبَة", indo: "Dokter (Perempuan)", category: "profesi", icon: "fa-stethoscope", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّبِيبَةُ تَفْحَصُ المَرِيضَةَ بِعِنَايَةٍ.", sentenceIndo: "Dokter perempuan itu memeriksa pasien dengan cermat." },
+      { id: 25, arabic: "مُعَلِّم", indo: "Guru (Laki-laki)", category: "profesi", icon: "fa-chalkboard-user", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُعَلِّمُ يُعَلِّمُ الطُّلَّابَ فِي الفَصْلِ.", sentenceIndo: "Guru itu mengajar para siswa di kelas." },
+      { id: 26, arabic: "مُعَلِّمَة", indo: "Guru (Perempuan)", category: "profesi", icon: "fa-graduation-cap", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُعَلِّمَةُ تَشْرَحُ الدَّرْسَ بِوُضُوحٍ.", sentenceIndo: "Guru perempuan itu menjelaskan pelajaran dengan jelas." },
+      { id: 27, arabic: "طَالِب", indo: "Siswa (Laki-laki)", category: "profesi", icon: "fa-book-reader", img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّالِبُ يَقْرَأُ الكِتَابَ فِي المَكْتَبَةِ.", sentenceIndo: "Siswa itu membaca buku di perpustakaan." },
+      { id: 28, arabic: "طَالِبَة", indo: "Siswi (Perempuan)", category: "profesi", icon: "fa-user-graduate", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الطَّالِبَةُ تَكْتُبُ الوَاجِبَ المَنْزِلِيَّ.", sentenceIndo: "Siswi itu menulis pekerjaan rumah." },
+      { id: 29, arabic: "مُرَبِّيَة", indo: "Pengasuh / Pendidik", category: "profesi", icon: "fa-person-shelter", img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُرَبِّيَةُ تَهْتَمُّ بِالأَطْفَالِ بِحُبٍّ.", sentenceIndo: "Pengasuh itu merawat anak-anak dengan kasih sayang." },
+      { id: 30, arabic: "تَاجِر", indo: "Pedagang (Laki-laki)", category: "profesi", icon: "fa-store", img: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=600&q=80", sentenceArabic: "التَّاجِرُ يَبِيعُ الفَوَاكِهَ فِي السُّوقِ.", sentenceIndo: "Pedagang itu menjual buah-buahan di pasar." },
+      { id: 31, arabic: "تَاجِرَة", indo: "Pedagang (Perempuan)", category: "profesi", icon: "fa-shop", img: "https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=600&q=80", sentenceArabic: "التَّاجِرَةُ تَبِيعُ المَلَابِسَ الْجَمِيلَةَ.", sentenceIndo: "Pedagang perempuan itu menjual pakaian indah." },
+      { id: 32, arabic: "مُوَظَّف", indo: "Pegawai (Laki-laki)", category: "profesi", icon: "fa-briefcase", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُوَظَّفُ يَعْمَلُ فِي المَكْتَبِ صَبَاحًا.", sentenceIndo: "Pegawai itu bekerja di kantor pada pagi hari." },
+      { id: 33, arabic: "مُوَظَّفَة", indo: "Pegawai (Perempuan)", category: "profesi", icon: "fa-building-user", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُوَظَّفَةُ تُنَظِّمُ المَلَفَّاتِ فِي الشَّرِكَةِ.", sentenceIndo: "Pegawai perempuan itu merapikan berkas di perusahaan." },
+      { id: 34, arabic: "سَائِق", indo: "Sopir / Pengemudi", category: "profesi", icon: "fa-car", img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "السَّائِقُ يَقُودُ السَّيَّارَةَ بِحَذَرٍ.", sentenceIndo: "Sopir itu mengendarai mobil dengan hati-hati." },
+      { id: 35, arabic: "خَادِم", indo: "Asisten Rumah Tangga", category: "profesi", icon: "fa-hand-holding-heart", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الخَادِمُ يُنَظِّفُ البَيْتَ كُلَّ يَوْمٍ.", sentenceIndo: "Asisten rumah tangga merapikan rumah setiap hari." },
+      { id: 36, arabic: "شُرْطِيّ", indo: "Polisi", category: "profesi", icon: "fa-user-shield", img: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الشُّرْطِيُّ يَحْمِي الأَمْنَ فِي المَدِينَةِ.", sentenceIndo: "Polisi menjaga keamanan di kota." },
+      { id: 37, arabic: "جُنْدِيّ", indo: "Tentara / Prajurit", category: "profesi", icon: "fa-person-military-rifle", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الجُنْدِيُّ يُدَافِعُ عَنِ الوَطَنِ بِشَجَاعَةٍ.", sentenceIndo: "Prajurit itu membela tanah air dengan keberanian." },
+      { id: 38, arabic: "مُصَوِّر", indo: "Fotografer", category: "profesi", icon: "fa-camera", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُصَوِّرُ يَلْتَقِطُ الصُّوَرَ الرَّائِحَةَ.", sentenceIndo: "Fotografer itu mengambil foto-foto yang indah." },
+      { id: 39, arabic: "مُمَرِّضَة", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical", img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المُمَرِّضَةُ تُسَاعِدُ الطَّبِيبَ فِي العِيَادَةِ.", sentenceIndo: "Perawat perempuan itu membantu dokter di klinik." },
+      { id: 40, arabic: "مَدِير", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المَدِيرُ يُدِيرُ المَدْرَسَةَ بِحِكْمَةٍ.", sentenceIndo: "Kepala sekolah mengelola sekolah dengan bijaksana." },
 
       // --- TEMA 3: BENDA & RUMAH (20 ITEMS WITH SENTENCE EXAMPLES) ---
-      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image", img: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80", sentenceArabic: "هَذِهِ صُورَةٌ جَمِيلَةٌ عَلَى الجِدَارِ.", sentenceLatin: "Hadhihi suratun jamilatun 'alal-jidar.", sentenceIndo: "Ini foto yang indah di dinding." },
-      { id: 42, arabic: "مِعْطَف", latin: "Mi'thaf", indo: "Jas / Mantel", category: "benda", icon: "fa-vest", img: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَلْبَسُ المِعْطَفَ فِي يَوْمِ البَرْدِ.", sentenceLatin: "Albasul-mi'tafa fi yaumil-bard.", sentenceIndo: "Aku memakai jas mantel di hari yang dingin." },
-      { id: 43, arabic: "نَظَّارَة", latin: "Naththarah", indo: "Kacamata", category: "benda", icon: "fa-glasses", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَضَعُ النَّظَّارَةَ لِلْقِرَاءَةِ.", sentenceLatin: "Ada'un-naddarata lil-qira'ah.", sentenceIndo: "Aku memakai kacamata untuk membaca." },
-      { id: 44, arabic: "غُرْفَة", latin: "Ghurfah", indo: "Kamar Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1540518614846-7ede433c5163?auto=format&fit=crop&w=600&q=80", sentenceArabic: "غُرْفَتِي نَظِيفَةٌ وَمُرَتَّبَةٌ.", sentenceLatin: "Ghurfati nadhifatun wa murattabah.", sentenceIndo: "Kamarku bersih dan rapi." },
-      { id: 45, arabic: "حَمَّام", latin: "Hammam", indo: "Kamar Mandi", category: "benda", icon: "fa-shower", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَتَوَضَّأُ فِي الحَمَّامِ لِلصَّلَاةِ.", sentenceLatin: "Atawadda'u fil-hammami lis-salah.", sentenceIndo: "Aku berwudhu di kamar mandi untuk shalat." },
-      { id: 46, arabic: "مُصَلَّى", latin: "Mushalla", indo: "Mushalla / Tempat Shalat", category: "benda", icon: "fa-rug", img: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نُصَلِّي فِي المُصَلَّى جَمَاعَةً.", sentenceLatin: "Nusalli fil-musalla jama'ah.", sentenceIndo: "Kami shalat di mushalla secara berjamaah." },
-      { id: 47, arabic: "مَسْجِد", latin: "Masjid", indo: "Masjid", category: "benda", icon: "fa-mosque", img: "https://images.unsplash.com/photo-1542816417-0983cbe82752?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المَسْجِدُ قَرِيبٌ مِنْ بَيْتِي.", sentenceLatin: "Al-masjidu qaribun min bayti.", sentenceIndo: "Masjid itu dekat dari rumahku." },
-      { id: 48, arabic: "أَذَانُ الْفَجْرِ", latin: "Adhanul Fajr", indo: "Azan Subuh", category: "benda", icon: "fa-bell", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَسْمَعُ أَذَانَ الفَجْرِ صَبَاحًا.", sentenceLatin: "Asma'u adhanal-fajri sabaha.", sentenceIndo: "Aku mendengar azan Subuh di pagi hari." },
-      { id: 49, arabic: "سَجَّادَة", latin: "Sajjadah", indo: "Sajadah Shalat", category: "benda", icon: "fa-mattress-pillow", img: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَبْسُطُ السَّجَّادَةَ عَلَى الأَرْضِ.", sentenceLatin: "Absutus-sajjadata 'alal-ard.", sentenceIndo: "Aku menggelar sajadah di atas lantai." },
-      { id: 50, arabic: "مُصْحَف", latin: "Mushhaf", indo: "Mushaf Al-Qur'an", category: "benda", icon: "fa-book-quran", img: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَقْرَأُ المُصْحَفَ بَعْدَ صَلَاةِ الفَجْرِ.", sentenceLatin: "Aqra'ul-mushafa ba'da salatil-fajr.", sentenceIndo: "Aku membaca mushaf Al-Qur'an setelah shalat Subuh." },
-      { id: 51, arabic: "مَطْبَخ", latin: "Mathbakh", indo: "Dapur", category: "benda", icon: "fa-kitchen-set", img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الأُمُّ تُطْبُخُ الطَّعَامَ فِي المَطْبَخِ.", sentenceLatin: "Al-ummu tatbukhut-ta'ama fil-matbakh.", sentenceIndo: "Ibu memasak makanan di dapur." },
-      { id: 52, arabic: "صَالُون", latin: "Shaalun", indo: "Ruang Tamu", category: "benda", icon: "fa-couch", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نَجْلِسُ فِي الصَّالُونِ مَعَ الضُّيُوفِ.", sentenceLatin: "Najlisu fish-saloni ma'ad-duyuf.", sentenceIndo: "Kami duduk di ruang tamu bersama para tamu." },
-      { id: 53, arabic: "سَرِير", latin: "Sariir", indo: "Tempat Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَنَامُ عَلَى السَّرِيرِ المُرِيحِ.", sentenceLatin: "Anamu 'alas-sariril-murih.", sentenceIndo: "Aku tidur di atas tempat tidur yang nyaman." },
-      { id: 54, arabic: "خِزَانَة", latin: "Khizaanah", indo: "Lemari Pakaian", category: "benda", icon: "fa-box-archive", img: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَضَعُ المَلَابِسَ فِي الخِزَانَةِ.", sentenceLatin: "Ada'ul-malabisa fil-khizanah.", sentenceIndo: "Aku menaruh pakaian di dalam lemari." },
-      { id: 55, arabic: "مَكْتَب", latin: "Maktab", indo: "Meja Belajar", category: "benda", icon: "fa-table", img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَكْتُبُ الدَّرْسَ عَلَى المَكْتَبِ.", sentenceLatin: "Aktubud-darsa 'alal-maktab.", sentenceIndo: "Aku menulis pelajaran di atas meja belajar." },
-      { id: 56, arabic: "كُرْسِيّ", latin: "Kursiyy", indo: "Kursi Duduk", category: "benda", icon: "fa-chair", img: "https://images.unsplash.com/photo-1580481072645-022f9a6d1279?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَجْلِسُ عَلَى الكُرْسِيِّ لِلدِّرَاسَةِ.", sentenceLatin: "Ajlisu 'alal-kursiyyi lid-dirasah.", sentenceIndo: "Aku duduk di atas kursi untuk belajar." },
-      { id: 57, arabic: "سَاعَة", latin: "Saa'ah", indo: "Jam Dinding / Tangan", category: "benda", icon: "fa-clock", img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "السَّاعَةُ تُشِيرُ إِلَى الخَامِسَةِ.", sentenceLatin: "As-sa'atu tushiru ilal-khamisah.", sentenceIndo: "Jam menunjukkan pukul lima." },
-      { id: 58, arabic: "تِلْفَاز", latin: "Tilpaaz", indo: "Televisi", category: "benda", icon: "fa-tv", img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نُشَاهِدُ التِّلْفَازَ فِي المَسَاءِ.", sentenceLatin: "Nushahidut-tilfaza fil-masa'.", sentenceIndo: "Kami menonton televisi di malam hari." },
-      { id: 59, arabic: "بَاب", latin: "Baab", indo: "Pintu Rumah", category: "benda", icon: "fa-door-open", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَفْتَحُ البَابَ لِلضَّيْفِ.", sentenceLatin: "Aftahul-baba lid-dayf.", sentenceIndo: "Aku membuka pintu untuk tamu." },
-      { id: 60, arabic: "نَافِذَة", latin: "Naaphizhah", indo: "Jendela", category: "benda", icon: "fa-window-maximize", img: "https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَفْتَحُ النَّافِذَةَ لِيَدْخُلَ الهَوَاءُ.", sentenceLatin: "Aftahun-nafidhata liyadkhulal-hawa'.", sentenceIndo: "Aku membuka jendela agar udara masuk." }
+      { id: 41, arabic: "صُورَة", indo: "Foto / Gambar", category: "benda", icon: "fa-image", img: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80", sentenceArabic: "هَذِهِ صُورَةٌ جَمِيلَةٌ عَلَى الجِدَارِ.", sentenceIndo: "Ini foto yang indah di dinding." },
+      { id: 42, arabic: "مِعْطَف", indo: "Jas / Mantel", category: "benda", icon: "fa-vest", img: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَلْبَسُ المِعْطَفَ فِي يَوْمِ البَرْدِ.", sentenceIndo: "Aku memakai jas mantel di hari yang dingin." },
+      { id: 43, arabic: "نَظَّارَة", indo: "Kacamata", category: "benda", icon: "fa-glasses", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَضَعُ النَّظَّارَةَ لِلْقِرَاءَةِ.", sentenceIndo: "Aku memakai kacamata untuk membaca." },
+      { id: 44, arabic: "غُرْفَة", indo: "Kamar Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1540518614846-7ede433c5163?auto=format&fit=crop&w=600&q=80", sentenceArabic: "غُرْفَتِي نَظِيفَةٌ وَمُرَتَّبَةٌ.", sentenceIndo: "Kamarku bersih dan rapi." },
+      { id: 45, arabic: "حَمَّام", indo: "Kamar Mandi", category: "benda", icon: "fa-shower", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَتَوَضَّأُ فِي الحَمَّامِ لِلصَّلَاةِ.", sentenceIndo: "Aku berwudhu di kamar mandi untuk shalat." },
+      { id: 46, arabic: "مُصَلَّى", indo: "Mushalla / Tempat Shalat", category: "benda", icon: "fa-rug", img: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نُصَلِّي فِي المُصَلَّى جَمَاعَةً.", sentenceIndo: "Kami shalat di mushalla secara berjamaah." },
+      { id: 47, arabic: "مَسْجِد", indo: "Masjid", category: "benda", icon: "fa-mosque", img: "https://images.unsplash.com/photo-1542816417-0983cbe82752?auto=format&fit=crop&w=600&q=80", sentenceArabic: "المَسْجِدُ قَرِيبٌ مِنْ بَيْتِي.", sentenceIndo: "Masjid itu dekat dari rumahku." },
+      { id: 48, arabic: "أَذَانُ الْفَجْرِ", indo: "Azan Subuh", category: "benda", icon: "fa-bell", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَسْمَعُ أَذَانَ الفَجْرِ صَبَاحًا.", sentenceIndo: "Aku mendengar azan Subuh di pagi hari." },
+      { id: 49, arabic: "سَجَّادَة", indo: "Sajadah Shalat", category: "benda", icon: "fa-mattress-pillow", img: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَبْسُطُ السَّجَّادَةَ عَلَى الأَرْضِ.", sentenceIndo: "Aku menggelar sajadah di atas lantai." },
+      { id: 50, arabic: "مُصْحَف", indo: "Mushaf Al-Qur'an", category: "benda", icon: "fa-book-quran", img: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَقْرَأُ المُصْحَفَ بَعْدَ صَلَاةِ الفَجْرِ.", sentenceIndo: "Aku membaca mushaf Al-Qur'an setelah shalat Subuh." },
+      { id: 51, arabic: "مَطْبَخ", indo: "Dapur", category: "benda", icon: "fa-kitchen-set", img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "الأُمُّ تُطْبُخُ الطَّعَامَ فِي المَطْبَخِ.", sentenceIndo: "Ibu memasak makanan di dapur." },
+      { id: 52, arabic: "صَالُون", indo: "Ruang Tamu", category: "benda", icon: "fa-couch", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نَجْلِسُ فِي الصَّالُونِ مَعَ الضُّيُوفِ.", sentenceIndo: "Kami duduk di ruang tamu bersama para tamu." },
+      { id: 53, arabic: "سَرِير", indo: "Tempat Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَنَامُ عَلَى السَّرِيرِ المُرِيحِ.", sentenceIndo: "Aku tidur di atas tempat tidur yang nyaman." },
+      { id: 54, arabic: "خِزَانَة", indo: "Lemari Pakaian", category: "benda", icon: "fa-box-archive", img: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَضَعُ المَلَابِسَ فِي الخِزَانَةِ.", sentenceIndo: "Aku menaruh pakaian di dalam lemari." },
+      { id: 55, arabic: "مَكْتَب", indo: "Meja Belajar", category: "benda", icon: "fa-table", img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَكْتُبُ الدَّرْسَ عَلَى المَكْتَبِ.", sentenceIndo: "Aku menulis pelajaran di atas meja belajar." },
+      { id: 56, arabic: "كُرْسِيّ", indo: "Kursi Duduk", category: "benda", icon: "fa-chair", img: "https://images.unsplash.com/photo-1580481072645-022f9a6d1279?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَجْلِسُ عَلَى الكُرْسِيِّ لِلدِّرَاسَةِ.", sentenceIndo: "Aku duduk di atas kursi untuk belajar." },
+      { id: 57, arabic: "سَاعَة", indo: "Jam Dinding / Tangan", category: "benda", icon: "fa-clock", img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=600&q=80", sentenceArabic: "السَّاعَةُ تُشِيرُ إِلَى الخَامِسَةِ.", sentenceIndo: "Jam menunjukkan pukul lima." },
+      { id: 58, arabic: "تِلْفَاز", indo: "Televisi", category: "benda", icon: "fa-tv", img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=600&q=80", sentenceArabic: "نُشَاهِدُ التِّلْفَازَ فِي المَسَاءِ.", sentenceIndo: "Kami menonton televisi di malam hari." },
+      { id: 59, arabic: "بَاب", indo: "Pintu Rumah", category: "benda", icon: "fa-door-open", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَفْتَحُ البَابَ لِلضَّيْفِ.", sentenceIndo: "Aku membuka pintu untuk tamu." },
+      { id: 60, arabic: "نَافِذَة", indo: "Jendela", category: "benda", icon: "fa-window-maximize", img: "https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&w=600&q=80", sentenceArabic: "أَفْتَحُ النَّافِذَةَ لِيَدْخُلَ الهَوَاءُ.", sentenceIndo: "Aku membuka jendela agar udara masuk." }
     ];
 
     // ==================== 2. DATA HIWAR SANGAT LENGKAP ====================
@@ -847,7 +850,10 @@
     // ==================== TAB NAVIGATION ====================
     function switchTab(tabId) {
       document.querySelectorAll(".tab-content").forEach(el => el.classList.add("hidden"));
-      document.getElementById(`tab-${tabId}`).classList.remove("hidden");
+      const targetTab = document.getElementById(`tab-${tabId}`);
+      if (targetTab) {
+        targetTab.classList.remove("hidden");
+      }
 
       // Update sidebar nav active styling
       document.querySelectorAll(".side-nav-btn").forEach(btn => {
@@ -867,6 +873,7 @@
 
     // ==================== AUDIO PRONUNCIATION (SPEECH SYNTHESIS) ====================
     function playAudio(text) {
+      if (!text) return;
       if ('speechSynthesis' in window) {
         window.speechSynthesis.cancel(); // Stop any ongoing speech
         const utterance = new SpeechSynthesisUtterance(text);
@@ -878,16 +885,23 @@
       }
     }
 
+    function playAudioById(id, type) {
+      const item = mufradatData.find(m => m.id === id);
+      if (!item) return;
+      const text = type === 'sentence' ? item.sentenceArabic : item.arabic;
+      playAudio(text);
+    }
+
     // ==================== MUFRADAT RENDER (3D FLIP CARDS WITH SENTENCE EXAMPLES) ====================
     function renderMufradatGrid() {
       const grid = document.getElementById("mufradat-grid");
+      if (!grid) return;
       grid.innerHTML = "";
 
       currentFilteredMufradat.forEach(item => {
         const card = document.createElement("div");
-        card.className = "flip-card h-[400px] cursor-pointer group";
+        card.className = "flip-card cursor-pointer group";
         card.onclick = (e) => {
-          // Don't flip if audio button was clicked
           if (e.target.closest('.audio-btn')) return;
           card.classList.toggle("is-flipped");
         };
@@ -903,7 +917,7 @@
                   <span class="w-7 h-7 rounded-full bg-brand-light-green text-brand-dark text-xs font-bold flex items-center justify-center shadow-xs">
                     ${item.id}
                   </span>
-                  <button onclick="playAudio('${item.arabic}')" title="Putar Audio Kata" class="audio-btn w-8 h-8 rounded-full bg-[#F3EFE6] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-colors shadow-xs z-10">
+                  <button onclick="event.stopPropagation(); playAudioById(${item.id}, 'word')" title="Putar Audio Kata" class="audio-btn w-8 h-8 rounded-full bg-[#F3EFE6] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-colors shadow-xs z-10">
                     <i class="fa-solid fa-volume-high text-xs"></i>
                   </button>
                 </div>
@@ -942,7 +956,7 @@
                   <span class="text-[11px] font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
                     <i class="fa-solid fa-quote-left text-amber-600"></i> Contoh Dalam Kalimat
                   </span>
-                  <button onclick="playAudio('${item.sentenceArabic}')" title="Putar Audio Kalimat" class="audio-btn w-8 h-8 rounded-full bg-emerald-800 hover:bg-emerald-900 text-white flex items-center justify-center transition-colors shadow-xs">
+                  <button onclick="event.stopPropagation(); playAudioById(${item.id}, 'sentence')" title="Putar Audio Kalimat" class="audio-btn w-8 h-8 rounded-full bg-emerald-800 hover:bg-emerald-900 text-white flex items-center justify-center transition-colors shadow-xs">
                     <i class="fa-solid fa-volume-high text-xs"></i>
                   </button>
                 </div>
@@ -1015,17 +1029,24 @@
     // ==================== HIWAR RENDER & ROLEPLAY ====================
     function selectHiwar(num) {
       document.querySelectorAll(".hiwar-view").forEach(el => el.classList.add("hidden"));
-      document.getElementById(`hiwar-content-${num}`).classList.remove("hidden");
+      const targetHiwar = document.getElementById(`hiwar-content-${num}`);
+      if (targetHiwar) {
+        targetHiwar.classList.remove("hidden");
+      }
 
       document.querySelectorAll(".hiwar-selector-btn").forEach(btn => {
         btn.classList.remove("bg-brand-dark", "text-white");
         btn.classList.add("bg-[#EFECE4]", "text-brand-muted");
       });
-      document.getElementById(`hiwar-tab-${num}`).classList.add("bg-brand-dark", "text-white");
+      const selectedTab = document.getElementById(`hiwar-tab-${num}`);
+      if (selectedTab) {
+        selectedTab.classList.add("bg-brand-dark", "text-white");
+      }
     }
 
     function renderDialogue(num) {
       const container = document.getElementById(`dialogue-lines-${num}`);
+      if (!container) return;
       container.innerHTML = "";
 
       hiwarData[num].forEach((lineObj, idx) => {
@@ -1039,7 +1060,7 @@
               <span class="text-xs font-bold px-3 py-1 rounded-full ${isRole1 ? 'bg-emerald-800 text-white' : 'bg-amber-800 text-white'}">
                 ${lineObj.speaker}
               </span>
-              <button onclick="playAudio('${lineObj.line}')" class="text-xs text-brand-dark hover:text-emerald-900 flex items-center gap-1 font-semibold">
+              <button onclick="playAudio('${lineObj.line.replace(/'/g, "\\'")}')" class="text-xs text-brand-dark hover:text-emerald-900 flex items-center gap-1 font-semibold">
                 <i class="fa-solid fa-volume-high"></i> Dengarkan Audio
               </button>
             </div>
@@ -1081,6 +1102,7 @@
     // ==================== TADRIB MUFRADAT (30 SOAL) ====================
     function renderTadribMufradat() {
       const container = document.getElementById("quiz-mufradat-container");
+      if (!container) return;
       container.innerHTML = "";
 
       tadribMufradatData.forEach((q, idx) => {
@@ -1116,6 +1138,7 @@
     // ==================== TADRIB HIWAR (30 SOAL) ====================
     function renderTadribHiwar() {
       const container = document.getElementById("quiz-hiwar-container");
+      if (!container) return;
       container.innerHTML = "";
 
       tadribHiwarData.forEach((q, idx) => {
@@ -1155,13 +1178,15 @@
         tadribMufradatData.forEach(q => {
           if (document.querySelector(`input[name="qm_${q.id}"]:checked`)) answered++;
         });
-        document.getElementById("tadrib-m-progress").innerText = answered;
+        const elem = document.getElementById("tadrib-m-progress");
+        if (elem) elem.innerText = answered;
       } else {
         let answered = 0;
         tadribHiwarData.forEach(q => {
           if (document.querySelector(`input[name="qh_${q.id}"]:checked`)) answered++;
         });
-        document.getElementById("tadrib-h-progress").innerText = answered;
+        const elem = document.getElementById("tadrib-h-progress");
+        if (elem) elem.innerText = answered;
       }
     }
 
@@ -1170,6 +1195,7 @@
       tadribMufradatData.forEach(q => {
         const selected = document.querySelector(`input[name="qm_${q.id}"]:checked`);
         const fb = document.getElementById(`feedback-m-${q.id}`);
+        if (!fb) return;
         fb.classList.remove("hidden", "bg-emerald-100", "text-emerald-900", "bg-rose-100", "text-rose-900");
 
         if (selected && parseInt(selected.value) === q.correct) {
@@ -1183,7 +1209,8 @@
       });
 
       scoreMufradat = Math.round((correctCount / 30) * 100);
-      document.getElementById("score-mufradat-display").innerText = scoreMufradat;
+      const displayElem = document.getElementById("score-mufradat-display");
+      if (displayElem) displayElem.innerText = scoreMufradat;
       updateGlobalScore();
       alert(`Pemeriksaan Selesai! Skor Tadrib Mufradat Anda: ${scoreMufradat} / 100 (${correctCount} dari 30 soal benar)`);
     }
@@ -1193,6 +1220,7 @@
       tadribHiwarData.forEach(q => {
         const selected = document.querySelector(`input[name="qh_${q.id}"]:checked`);
         const fb = document.getElementById(`feedback-h-${q.id}`);
+        if (!fb) return;
         fb.classList.remove("hidden", "bg-emerald-100", "text-emerald-900", "bg-rose-100", "text-rose-900");
 
         if (selected && parseInt(selected.value) === q.correct) {
@@ -1206,14 +1234,16 @@
       });
 
       scoreHiwar = Math.round((correctCount / 30) * 100);
-      document.getElementById("score-hiwar-display").innerText = scoreHiwar;
+      const displayElem = document.getElementById("score-hiwar-display");
+      if (displayElem) displayElem.innerText = scoreHiwar;
       updateGlobalScore();
       alert(`Pemeriksaan Selesai! Skor Tadrib Hiwar Anda: ${scoreHiwar} / 100 (${correctCount} dari 30 soal benar)`);
     }
 
     function updateGlobalScore() {
       const avg = Math.round((scoreMufradat + scoreHiwar) / 2);
-      document.getElementById("global-score-badge").innerText = avg;
+      const globalBadge = document.getElementById("global-score-badge");
+      if (globalBadge) globalBadge.innerText = avg;
       const drawerScore = document.getElementById("drawer-score-badge");
       if (drawerScore) drawerScore.innerText = avg;
     }
@@ -1223,11 +1253,13 @@
         const radios = document.getElementsByName(`qm_${q.id}`);
         radios.forEach(r => r.checked = false);
         const fb = document.getElementById(`feedback-m-${q.id}`);
-        fb.classList.add("hidden");
+        if (fb) fb.classList.add("hidden");
       });
       scoreMufradat = 0;
-      document.getElementById("score-mufradat-display").innerText = "0";
-      document.getElementById("tadrib-m-progress").innerText = "0";
+      const displayElem = document.getElementById("score-mufradat-display");
+      if (displayElem) displayElem.innerText = "0";
+      const progressElem = document.getElementById("tadrib-m-progress");
+      if (progressElem) progressElem.innerText = "0";
       updateGlobalScore();
     }
 
@@ -1236,11 +1268,13 @@
         const radios = document.getElementsByName(`qh_${q.id}`);
         radios.forEach(r => r.checked = false);
         const fb = document.getElementById(`feedback-h-${q.id}`);
-        fb.classList.add("hidden");
+        if (fb) fb.classList.add("hidden");
       });
       scoreHiwar = 0;
-      document.getElementById("score-hiwar-display").innerText = "0";
-      document.getElementById("tadrib-h-progress").innerText = "0";
+      const displayElem = document.getElementById("score-hiwar-display");
+      if (displayElem) displayElem.innerText = "0";
+      const progressElem = document.getElementById("tadrib-h-progress");
+      if (progressElem) progressElem.innerText = "0";
       updateGlobalScore();
     }
   </script>
