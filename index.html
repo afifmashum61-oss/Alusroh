@@ -164,7 +164,7 @@
       <button id="side-nav-mufradat" onclick="switchTab('mufradat')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
         <div class="flex items-center gap-3.5">
           <i class="fa-solid fa-book-bookmark w-5 text-center text-emerald-700"></i>
-          <span>Mufradat (Kosakata)</span>
+          <span>Mufradat (Kosakata + Gambar)</span>
         </div>
         <span class="bg-brand-dark text-white text-xs px-2.5 py-0.5 rounded-full font-sans font-bold">60</span>
       </button>
@@ -218,8 +218,8 @@
           <div class="flex items-center gap-3">
             <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg font-arabic">جَدّ</div>
             <div>
-              <p class="text-xs text-brand-muted font-medium">Kosakata & Visual</p>
-              <p class="text-sm font-bold text-brand-dark">60 Mufradat (20 / Tema)</p>
+              <p class="text-xs text-brand-muted font-medium">Kosakata & Visual Gambar</p>
+              <p class="text-sm font-bold text-brand-dark">60 Mufradat Bergambar</p>
             </div>
           </div>
         </div>
@@ -257,13 +257,13 @@
           </div>
 
           <p class="text-base sm:text-lg text-brand-muted leading-relaxed pt-2">
-            Kuasai <strong>60 Mufradat Kosakata</strong>, pelajari <strong>3 Percakapan Hiwar Mendalam</strong> beserta diagram Pohon Keluarga Rasulullah ﷺ, dan uji pemahamanmu melalui <strong>60 Tadrib Latihan Soal</strong> (30 Mufradat + 30 Hiwar).
+            Kuasai <strong>60 Mufradat Kosakata Bergambar Visual</strong>, pelajari <strong>3 Percakapan Hiwar Mendalam</strong> beserta diagram Pohon Keluarga Rasulullah ﷺ, dan uji pemahamanmu melalui <strong>60 Tadrib Latihan Soal</strong> (30 Mufradat + 30 Hiwar).
           </p>
 
           <!-- Hero Action Buttons -->
           <div class="pt-4 flex flex-wrap items-center gap-4">
             <button onclick="switchTab('mufradat')" class="px-7 py-3.5 rounded-full bg-brand-dark hover:bg-[#073B28] text-white font-bold text-sm shadow-md transition-all flex items-center gap-2">
-              Mulai Belajar 60 Mufradat <i class="fa-solid fa-arrow-right text-xs"></i>
+              Mulai Belajar 60 Mufradat Bergambar <i class="fa-solid fa-arrow-right text-xs"></i>
             </button>
             <button onclick="switchTab('tadrib-mufradat')" class="px-7 py-3.5 rounded-full bg-white hover:bg-emerald-50 text-brand-dark font-bold text-sm border border-[#D5CFBF] transition-all shadow-sm">
               <i class="fa-solid fa-pen-ruler text-emerald-700"></i> Kerjakan 60 Soal Tadrib
@@ -279,11 +279,11 @@
         <!-- Card 1 -->
         <div onclick="switchTab('mufradat')" class="group bg-white p-7 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all cursor-pointer">
           <div class="w-12 h-12 rounded-xl bg-brand-light-green text-brand-dark flex items-center justify-center font-bold text-xl mb-5 group-hover:scale-110 transition-transform">
-            <i class="fa-solid fa-book-open text-brand-dark"></i>
+            <i class="fa-solid fa-image text-brand-dark"></i>
           </div>
           <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul 1</span>
-          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Mufradat (Kosakata)</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">20 Kosakata Anggota Keluarga, 20 Profesi, dan 20 Benda & Ruangan Rumah dengan audio & arti.</p>
+          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Mufradat Bergambar Visual</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">20 Kosakata Anggota Keluarga, 20 Profesi, dan 20 Benda & Ruangan Rumah dengan Ilustrasi Gambar & Audio.</p>
           <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
             Pelajari Sekarang <i class="fa-solid fa-chevron-right text-[10px]"></i>
           </div>
@@ -320,21 +320,26 @@
     </section>
 
 
-    <!-- ==================== TAB 2: MUFRADAT (60 KOSAKATA: 20/TEMA) ==================== -->
+    <!-- ==================== TAB 2: MUFRADAT (60 KOSAKATA BERGAMBAR: 20/TEMA) ==================== -->
     <section id="tab-mufradat" class="tab-content hidden fade-in space-y-8">
       
       <!-- Section Header -->
       <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 bg-white p-6 rounded-2xl border border-[#E8E4D9] shadow-soft">
         <div>
-          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Modul Pembelajaran</span>
+          <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Modul Pembelajaran Visual</span>
           <h2 class="text-2xl font-bold text-brand-dark font-arabic flex items-center gap-2">
-            المَفْرُدَات <span class="text-base font-normal font-sans text-brand-muted">(60 Kosakata: 20 per Tema)</span>
+            المَفْرُدَات الْمُصَوَّرَة <span class="text-base font-normal font-sans text-brand-muted">(60 Kosakata Bergambar Visual)</span>
           </h2>
-          <p class="text-xs text-brand-muted mt-1">Klik ikon audio <i class="fa-solid fa-volume-high text-brand-dark"></i> pada setiap kartu untuk mendengarkan pengucapan fasih.</p>
+          <p class="text-xs text-brand-muted mt-1">Setiap kartu dilengkapi ilustrasi gambar visual & audio audio <i class="fa-solid fa-volume-high text-brand-dark"></i> untuk kemudahan hafalan siswa.</p>
         </div>
 
-        <!-- Filter Categories with Counts -->
-        <div class="flex flex-wrap gap-2">
+        <!-- Filter Categories & Memory Mode Toggle -->
+        <div class="flex flex-wrap items-center gap-2">
+          <!-- Toggle Sembunyikan Teks Arti untuk Uji Memori -->
+          <button id="toggle-indo-btn" onclick="toggleIndoText()" class="px-3.5 py-2 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 transition-all flex items-center gap-1.5">
+            <i class="fa-solid fa-eye-slash"></i> <span>Sembunyikan Arti (Uji Hafalan)</span>
+          </button>
+
           <button id="filter-all-btn" onclick="filterMufradat('all')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-brand-dark text-white">Semua (60)</button>
           <button id="filter-keluarga-btn" onclick="filterMufradat('keluarga')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Keluarga (20)</button>
           <button id="filter-profesi-btn" onclick="filterMufradat('profesi')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Profesi (20)</button>
@@ -342,9 +347,9 @@
         </div>
       </div>
 
-      <!-- 60 Mufradat Grid Cards -->
-      <div id="mufradat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-5">
-        <!-- Javascript will populate 60 cards dynamically -->
+      <!-- 60 Mufradat Grid Cards with Visual Illustrations -->
+      <div id="mufradat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        <!-- Javascript will populate 60 visual cards dynamically -->
       </div>
 
     </section>
@@ -591,7 +596,7 @@
       </div>
 
       <p class="text-xs text-brand-muted max-w-xl mx-auto leading-relaxed">
-        Modul Lengkap: 60 Mufradat (20 per Tema), 3 Hiwar Percakapan Mendalam dengan Silsilah Rasulullah ﷺ, dan 60 Latihan Soal Interaktif (30 Mufradat + 30 Hiwar).
+        Modul Lengkap: 60 Mufradat Bergambar Visual (20 per Tema), 3 Hiwar Percakapan Mendalam dengan Silsilah Rasulullah ﷺ, dan 60 Latihan Soal Interaktif (30 Mufradat + 30 Hiwar).
       </p>
     </div>
   </footer>
@@ -599,73 +604,73 @@
 
   <!-- SCRIPT LOGIC -->
   <script>
-    // ==================== 1. DATA 60 MUFRADAT (EXACTLY 20 PER THEME) ====================
+    // ==================== 1. DATA 60 MUFRADAT WITH VISUAL IMAGES (EXACTLY 20 PER THEME) ====================
     const mufradatData = [
       // --- TEMA 1: KELUARGA (20 ITEMS) ---
-      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users" },
-      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap" },
-      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie" },
-      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding" },
-      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large" },
-      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user" },
-      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person" },
-      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress" },
-      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child" },
-      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress" },
-      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse" },
-      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor" },
-      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user" },
-      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse" },
-      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group" },
-      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart" },
-      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child" },
-      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching" },
-      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof" },
-      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house" },
+      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "https://images.unsplash.com/photo-1511895426328-dc8714191300?auto=format&fit=crop&w=400&q=80" },
+      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=400&q=80" },
+      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" },
+      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=400&q=80" },
+      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=400&q=80" },
+      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=400&q=80" },
+      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&w=400&q=80" },
+      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" },
+      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child", img: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=400&q=80" },
+      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=400&q=80" },
+      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=400&q=80" },
+      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
+      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=400&q=80" },
+      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=400&q=80" },
+      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" },
+      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart", img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=400&q=80" },
+      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=400&q=80" },
+      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=400&q=80" },
+      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=400&q=80" },
+      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house", img: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?auto=format&fit=crop&w=400&q=80" },
 
       // --- TEMA 2: PROFESI (20 ITEMS) ---
-      { id: 21, arabic: "مُهَنْدِس", latin: "Muhandis", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting" },
-      { id: 22, arabic: "مُهَنْدِسَة", latin: "Muhandisah", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass" },
-      { id: 23, arabic: "طَبِيب", latin: "Thabib", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor" },
-      { id: 24, arabic: "طَبِيبَة", latin: "Thabibah", indo: "Dokter (Perempuan)", category: "profesi", icon: "fa-stethoscope" },
-      { id: 25, arabic: "مُعَلِّم", latin: "Mu'allim", indo: "Guru (Laki-laki)", category: "profesi", icon: "fa-chalkboard-user" },
-      { id: 26, arabic: "مُعَلِّمَة", latin: "Mu'allimah", indo: "Guru (Perempuan)", category: "profesi", icon: "fa-graduation-cap" },
-      { id: 27, arabic: "طَالِب", latin: "Thalib", indo: "Siswa (Laki-laki)", category: "profesi", icon: "fa-book-reader" },
-      { id: 28, arabic: "طَالِبَة", latin: "Thalibah", indo: "Siswi (Perempuan)", category: "profesi", icon: "fa-user-graduate" },
-      { id: 29, arabic: "مُرَبِّيَة", latin: "Murabbiyah", indo: "Pengasuh / Pendidik", category: "profesi", icon: "fa-person-shelter" },
-      { id: 30, arabic: "تَاجِر", latin: "Taajir", indo: "Pedagang (Laki-laki)", category: "profesi", icon: "fa-store" },
-      { id: 31, arabic: "تَاجِرَة", latin: "Taajirah", indo: "Pedagang (Perempuan)", category: "profesi", icon: "fa-shop" },
-      { id: 32, arabic: "مُوَظَّف", latin: "Muwazhphaf", indo: "Pegawai (Laki-laki)", category: "profesi", icon: "fa-briefcase" },
-      { id: 33, arabic: "مُوَظَّفَة", latin: "Muwazhphafah", indo: "Pegawai (Perempuan)", category: "profesi", icon: "fa-building-user" },
-      { id: 34, arabic: "سَائِق", latin: "Saa'iq", indo: "Sopir / Pengemudi", category: "profesi", icon: "fa-car" },
-      { id: 35, arabic: "خَادِم", latin: "Khaadim", indo: "Asisten Rumah Tangga", category: "profesi", icon: "fa-hand-holding-heart" },
-      { id: 36, arabic: "شُرْطِيّ", latin: "Shurthiyy", indo: "Polisi", category: "profesi", icon: "fa-user-shield" },
-      { id: 37, arabic: "جُنْدِيّ", latin: "Jundiyy", indo: "Tentara / Prajurit", category: "profesi", icon: "fa-person-military-rifle" },
-      { id: 38, arabic: "مُصَوِّر", latin: "Mushawwir", indo: "Fotografer", category: "profesi", icon: "fa-camera" },
-      { id: 39, arabic: "مُمَرِّضَة", latin: "Mumarrizhah", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical" },
-      { id: 40, arabic: "مَدِير", latin: "Madiir", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear" },
+      { id: 21, arabic: "مُهَنْدِس", latin: "Muhandis", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=400&q=80" },
+      { id: 22, arabic: "مُهَنْدِسَة", latin: "Muhandisah", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=400&q=80" },
+      { id: 23, arabic: "طَبِيب", latin: "Thabib", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=400&q=80" },
+      { id: 24, arabic: "طَبِيبَة", latin: "Thabibah", indo: "Dokter (Perempuan)", category: "profesi", icon: "fa-stethoscope", img: "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=400&q=80" },
+      { id: 25, arabic: "مُعَلِّم", latin: "Mu'allim", indo: "Guru (Laki-laki)", category: "profesi", icon: "fa-chalkboard-user", img: "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?auto=format&fit=crop&w=400&q=80" },
+      { id: 26, arabic: "مُعَلِّمَة", latin: "Mu'allimah", indo: "Guru (Perempuan)", category: "profesi", icon: "fa-graduation-cap", img: "https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=400&q=80" },
+      { id: 27, arabic: "طَالِب", latin: "Thalib", indo: "Siswa (Laki-laki)", category: "profesi", icon: "fa-book-reader", img: "https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=400&q=80" },
+      { id: 28, arabic: "طَالِبَة", latin: "Thalibah", indo: "Siswi (Perempuan)", category: "profesi", icon: "fa-user-graduate", img: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=400&q=80" },
+      { id: 29, arabic: "مُرَبِّيَة", latin: "Murabbiyah", indo: "Pengasuh / Pendidik", category: "profesi", icon: "fa-person-shelter", img: "https://images.unsplash.com/photo-1587654780291-39c9404d746b?auto=format&fit=crop&w=400&q=80" },
+      { id: 30, arabic: "تَاجِر", latin: "Taajir", indo: "Pedagang (Laki-laki)", category: "profesi", icon: "fa-store", img: "https://images.unsplash.com/photo-1556740758-90de374c12ad?auto=format&fit=crop&w=400&q=80" },
+      { id: 31, arabic: "تَاجِرَة", latin: "Taajirah", indo: "Pedagang (Perempuan)", category: "profesi", icon: "fa-shop", img: "https://images.unsplash.com/photo-1556742049-0a670f4a4591?auto=format&fit=crop&w=400&q=80" },
+      { id: 32, arabic: "مُوَظَّف", latin: "Muwazhphaf", indo: "Pegawai (Laki-laki)", category: "profesi", icon: "fa-briefcase", img: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=400&q=80" },
+      { id: 33, arabic: "مُوَظَّفَة", latin: "Muwazhphafah", indo: "Pegawai (Perempuan)", category: "profesi", icon: "fa-building-user", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=400&q=80" },
+      { id: 34, arabic: "سَائِق", latin: "Saa'iq", indo: "Sopir / Pengemudi", category: "profesi", icon: "fa-car", img: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&w=400&q=80" },
+      { id: 35, arabic: "خَادِم", latin: "Khaadim", indo: "Asisten Rumah Tangga", category: "profesi", icon: "fa-hand-holding-heart", img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=400&q=80" },
+      { id: 36, arabic: "شُرْطِيّ", latin: "Shurthiyy", indo: "Polisi", category: "profesi", icon: "fa-user-shield", img: "https://images.unsplash.com/photo-1541872703-74c5e44368f9?auto=format&fit=crop&w=400&q=80" },
+      { id: 37, arabic: "جُنْدِيّ", latin: "Jundiyy", indo: "Tentara / Prajurit", category: "profesi", icon: "fa-person-military-rifle", img: "https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=400&q=80" },
+      { id: 38, arabic: "مُصَوِّر", latin: "Mushawwir", indo: "Fotografer", category: "profesi", icon: "fa-camera", img: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=400&q=80" },
+      { id: 39, arabic: "مُمَرِّضَة", latin: "Mumarrizhah", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical", img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=400&q=80" },
+      { id: 40, arabic: "مَدِير", latin: "Madiir", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=400&q=80" },
 
       // --- TEMA 3: BENDA & RUMAH (20 ITEMS) ---
-      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image" },
-      { id: 42, arabic: "مِعْطَف", latin: "Mi'thaf", indo: "Jas / Mantel", category: "benda", icon: "fa-vest" },
-      { id: 43, arabic: "نَظَّارَة", latin: "Naththarah", indo: "Kacamata", category: "benda", icon: "fa-glasses" },
-      { id: 44, arabic: "غُرْفَة", latin: "Ghurfah", indo: "Kamar Tidur", category: "benda", icon: "fa-bed" },
-      { id: 45, arabic: "حَمَّام", latin: "Hammam", indo: "Kamar Mandi", category: "benda", icon: "fa-shower" },
-      { id: 46, arabic: "مُصَلَّى", latin: "Mushalla", indo: "Mushalla / Tempat Shalat", category: "benda", icon: "fa-rug" },
-      { id: 47, arabic: "مَسْجِد", latin: "Masjid", indo: "Masjid", category: "benda", icon: "fa-mosque" },
-      { id: 48, arabic: "أَذَانُ الْفَجْرِ", latin: "Adhanul Fajr", indo: "Azan Subuh", category: "benda", icon: "fa-bell" },
-      { id: 49, arabic: "سَجَّادَة", latin: "Sajjadah", indo: "Sajadah Shalat", category: "benda", icon: "fa-mattress-pillow" },
-      { id: 50, arabic: "مُصْحَف", latin: "Mushhaf", indo: "Mushaf Al-Qur'an", category: "benda", icon: "fa-book-quran" },
-      { id: 51, arabic: "مَطْبَخ", latin: "Mathbakh", indo: "Dapur", category: "benda", icon: "fa-kitchen-set" },
-      { id: 52, arabic: "صَالُون", latin: "Shaalun", indo: "Ruang Tamu", category: "benda", icon: "fa-couch" },
-      { id: 53, arabic: "سَرِير", latin: "Sariir", indo: "Tempat Tidur", category: "benda", icon: "fa-bed" },
-      { id: 54, arabic: "خِزَانَة", latin: "Khizaanah", indo: "Lemari Pakaian", category: "benda", icon: "fa-box-archive" },
-      { id: 55, arabic: "مَكْتَب", latin: "Maktab", indo: "Meja Belajar", category: "benda", icon: "fa-table" },
-      { id: 56, arabic: "كُرْسِيّ", latin: "Kursiyy", indo: "Kursi Duduk", category: "benda", icon: "fa-chair" },
-      { id: 57, arabic: "سَاعَة", latin: "Saa'ah", indo: "Jam Dinding / Tangan", category: "benda", icon: "fa-clock" },
-      { id: 58, arabic: "تِلْفَاز", latin: "Tilpaaz", indo: "Televisi", category: "benda", icon: "fa-tv" },
-      { id: 59, arabic: "بَاب", latin: "Baab", indo: "Pintu Rumah", category: "benda", icon: "fa-door-open" },
-      { id: 60, arabic: "نَافِذَة", latin: "Naaphizhah", indo: "Jendela", category: "benda", icon: "fa-window-maximize" }
+      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image", img: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=400&q=80" },
+      { id: 42, arabic: "مِعْطَف", latin: "Mi'thaf", indo: "Jas / Mantel", category: "benda", icon: "fa-vest", img: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=400&q=80" },
+      { id: 43, arabic: "نَظَّارَة", latin: "Naththarah", indo: "Kacamata", category: "benda", icon: "fa-glasses", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=400&q=80" },
+      { id: 44, arabic: "غُرْفَة", latin: "Ghurfah", indo: "Kamar Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1540518614846-7ede433c5163?auto=format&fit=crop&w=400&q=80" },
+      { id: 45, arabic: "حَمَّام", latin: "Hammam", indo: "Kamar Mandi", category: "benda", icon: "fa-shower", img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=400&q=80" },
+      { id: 46, arabic: "مُصَلَّى", latin: "Mushalla", indo: "Mushalla / Tempat Shalat", category: "benda", icon: "fa-rug", img: "https://images.unsplash.com/photo-1564769625905-50e93615e769?auto=format&fit=crop&w=400&q=80" },
+      { id: 47, arabic: "مَسْجِد", latin: "Masjid", indo: "Masjid", category: "benda", icon: "fa-mosque", img: "https://images.unsplash.com/photo-1542816417-0983cbe82752?auto=format&fit=crop&w=400&q=80" },
+      { id: 48, arabic: "أَذَانُ الْفَجْرِ", latin: "Adhanul Fajr", indo: "Azan Subuh", category: "benda", icon: "fa-bell", img: "https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=400&q=80" },
+      { id: 49, arabic: "سَجَّادَة", latin: "Sajjadah", indo: "Sajadah Shalat", category: "benda", icon: "fa-mattress-pillow", img: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=400&q=80" },
+      { id: 50, arabic: "مُصْحَف", latin: "Mushhaf", indo: "Mushaf Al-Qur'an", category: "benda", icon: "fa-book-quran", img: "https://images.unsplash.com/photo-1609599006353-e629aaabfeae?auto=format&fit=crop&w=400&q=80" },
+      { id: 51, arabic: "مَطْبَخ", latin: "Mathbakh", indo: "Dapur", category: "benda", icon: "fa-kitchen-set", img: "https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=400&q=80" },
+      { id: 52, arabic: "صَالُون", latin: "Shaalun", indo: "Ruang Tamu", category: "benda", icon: "fa-couch", img: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=400&q=80" },
+      { id: 53, arabic: "سَرِير", latin: "Sariir", indo: "Tempat Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=400&q=80" },
+      { id: 54, arabic: "خِزَانَة", latin: "Khizaanah", indo: "Lemari Pakaian", category: "benda", icon: "fa-box-archive", img: "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&w=400&q=80" },
+      { id: 55, arabic: "مَكْتَب", latin: "Maktab", indo: "Meja Belajar", category: "benda", icon: "fa-table", img: "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&w=400&q=80" },
+      { id: 56, arabic: "كُرْسِيّ", latin: "Kursiyy", indo: "Kursi Duduk", category: "benda", icon: "fa-chair", img: "https://images.unsplash.com/photo-1580481072645-022f9a6d1279?auto=format&fit=crop&w=400&q=80" },
+      { id: 57, arabic: "سَاعَة", latin: "Saa'ah", indo: "Jam Dinding / Tangan", category: "benda", icon: "fa-clock", img: "https://images.unsplash.com/photo-1524805444758-089113d48a6d?auto=format&fit=crop&w=400&q=80" },
+      { id: 58, arabic: "تِلْفَاز", latin: "Tilpaaz", indo: "Televisi", category: "benda", icon: "fa-tv", img: "https://images.unsplash.com/photo-1593359677879-a4bb92f829d1?auto=format&fit=crop&w=400&q=80" },
+      { id: 59, arabic: "بَاب", latin: "Baab", indo: "Pintu Rumah", category: "benda", icon: "fa-door-open", img: "https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=400&q=80" },
+      { id: 60, arabic: "نَافِذَة", latin: "Naaphizhah", indo: "Jendela", category: "benda", icon: "fa-window-maximize", img: "https://images.unsplash.com/photo-1503708928676-1cb796a0891e?auto=format&fit=crop&w=400&q=80" }
     ];
 
     // ==================== 2. DATA HIWAR SANGAT LENGKAP ====================
@@ -798,10 +803,11 @@
       { id: 30, type: "mc", q: "Apakah makna dari seruan 'الصَّلَاةُ خَيْرٌ مِنَ النَّوْمِ' saat azan Subuh?", options: ["Shalat itu lebih baik daripada tidur", "Mari kita tidur", "Shalat itu wajib", "Selamat pagi"], correct: 0 }
     ];
 
-    // Score Tracking
+    // State Tracking
     let scoreMufradat = 0;
     let scoreHiwar = 0;
     let currentFilteredMufradat = [...mufradatData];
+    let isIndoHidden = false;
 
     // Initial Load
     document.addEventListener("DOMContentLoaded", () => {
@@ -870,27 +876,34 @@
       }
     }
 
-    // ==================== MUFRADAT RENDER & FILTER ====================
+    // ==================== MUFRADAT RENDER & VISUAL IMAGES ====================
     function renderMufradatGrid() {
       const grid = document.getElementById("mufradat-grid");
       grid.innerHTML = "";
 
       currentFilteredMufradat.forEach(item => {
         const card = document.createElement("div");
-        card.className = "bg-white p-5 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all flex flex-col justify-between group";
+        card.className = "bg-white p-4 sm:p-5 rounded-2xl border border-[#E8E4D9] shadow-soft hover:shadow-md transition-all flex flex-col justify-between group overflow-hidden";
         card.innerHTML = `
           <div>
-            <div class="flex items-center justify-between mb-4">
-              <span class="w-8 h-8 rounded-full bg-brand-light-green text-brand-dark text-xs font-bold flex items-center justify-center">
+            <!-- Top badge + Audio button -->
+            <div class="flex items-center justify-between mb-3">
+              <span class="w-7 h-7 rounded-full bg-brand-light-green text-brand-dark text-xs font-bold flex items-center justify-center shadow-xs">
                 ${item.id}
               </span>
-              <button onclick="playAudio('${item.arabic}')" title="Putar Audio" class="w-9 h-9 rounded-full bg-[#F3EFE6] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-colors shadow-sm">
-                <i class="fa-solid fa-volume-high text-sm"></i>
+              <button onclick="playAudio('${item.arabic}')" title="Putar Audio Arab" class="w-8 h-8 rounded-full bg-[#F3EFE6] hover:bg-brand-dark hover:text-white text-brand-dark flex items-center justify-center transition-colors shadow-xs">
+                <i class="fa-solid fa-volume-high text-xs"></i>
               </button>
             </div>
             
-            <div class="text-center py-2">
-              <h3 class="text-3xl font-bold text-brand-dark font-arabic mb-1 group-hover:scale-105 transition-transform">
+            <!-- VISUAL IMAGE CONTAINER -->
+            <div class="w-full h-36 rounded-xl overflow-hidden bg-[#F5F2EB] mb-3.5 border border-[#E8E4D9] relative shadow-inner flex items-center justify-center group-hover:border-emerald-500 transition-colors">
+              <img src="${item.img}" alt="${item.indo}" loading="lazy" onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-emerald-100 to-teal-50 flex flex-col items-center justify-center text-brand-dark gap-2\'><i class=\'fa-solid ${item.icon} text-4xl text-emerald-800 opacity-80\'></i><span class=\'text-[10px] font-bold uppercase tracking-wider text-emerald-900 font-sans\'>${item.category}</span></div>';" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+            </div>
+
+            <!-- ARABIC & TRANSLITERATION -->
+            <div class="text-center py-1">
+              <h3 class="text-2xl sm:text-3xl font-bold text-brand-dark font-arabic mb-0.5 group-hover:scale-105 transition-transform">
                 ${item.arabic}
               </h3>
               <p class="text-xs font-semibold text-emerald-800 font-sans tracking-wide">
@@ -899,8 +912,11 @@
             </div>
           </div>
 
-          <div class="mt-4 pt-3 border-t border-[#F0ECE1] flex items-center justify-between text-xs">
-            <span class="font-medium text-brand-muted">${item.indo}</span>
+          <!-- INDONESIAN TRANSLATION MEANING -->
+          <div class="mt-3 pt-2.5 border-t border-[#F0ECE1] flex items-center justify-between text-xs">
+            <span class="mufradat-indo-text font-bold text-brand-dark ${isIndoHidden ? 'blur-xs select-none opacity-40' : ''}">
+              ${item.indo}
+            </span>
             <i class="fa-solid ${item.icon} text-brand-dark/40"></i>
           </div>
         `;
@@ -924,6 +940,21 @@
         currentFilteredMufradat = [...mufradatData];
       } else {
         currentFilteredMufradat = mufradatData.filter(m => m.category === cat);
+      }
+      renderMufradatGrid();
+    }
+
+    function toggleIndoText() {
+      isIndoHidden = !isIndoHidden;
+      const btn = document.getElementById("toggle-indo-btn");
+      if (isIndoHidden) {
+        btn.innerHTML = `<i class="fa-solid fa-eye"></i> <span>Tampilkan Arti</span>`;
+        btn.classList.replace("bg-amber-50", "bg-emerald-700");
+        btn.classList.replace("text-amber-900", "text-white");
+      } else {
+        btn.innerHTML = `<i class="fa-solid fa-eye-slash"></i> <span>Sembunyikan Arti (Uji Hafalan)</span>`;
+        btn.classList.replace("bg-emerald-700", "bg-amber-50");
+        btn.classList.replace("text-white", "text-amber-900");
       }
       renderMufradatGrid();
     }
