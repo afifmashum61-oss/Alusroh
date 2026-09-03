@@ -164,7 +164,7 @@
       <button id="side-nav-mufradat" onclick="switchTab('mufradat')" class="side-nav-btn w-full flex items-center justify-between px-4 py-3.5 rounded-2xl font-bold text-sm text-brand-dark hover:bg-brand-light-green transition-all">
         <div class="flex items-center gap-3.5">
           <i class="fa-solid fa-book-bookmark w-5 text-center text-emerald-700"></i>
-          <span>Mufradat (Kosakata + Foto Asli Orang Arab)</span>
+          <span>Mufradat (Kosakata + Foto Referensi)</span>
         </div>
         <span class="bg-brand-dark text-white text-xs px-2.5 py-0.5 rounded-full font-sans font-bold">60</span>
       </button>
@@ -213,25 +213,15 @@
       <!-- Hero Banner -->
       <div class="relative rounded-3xl bg-gradient-to-b from-[#F2EFE7] to-[#FAF8F5] border border-[#E6E2D6] p-8 sm:p-12 overflow-hidden shadow-soft">
         
-        <!-- Floating Avatar Decorative Badges -->
-        <div class="hidden lg:block absolute top-10 right-16 bg-white p-3.5 rounded-2xl shadow-md border border-[#EAE6DC] max-w-xs animate-bounce" style="animation-duration: 4s;">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-emerald-100 text-emerald-800 flex items-center justify-center font-bold text-lg font-arabic">جَدّ</div>
-            <div>
-              <p class="text-xs text-brand-muted font-medium">Foto Asli Orang Arab</p>
-              <p class="text-sm font-bold text-brand-dark">60 Mufradat Bergambar Realistis</p>
+        <!-- Floating Reference Photo Preview Badge -->
+        <div class="hidden lg:block absolute top-8 right-12 bg-white p-3 rounded-2xl shadow-lg border border-[#EAE6DC] max-w-xs transition-transform hover:scale-105">
+          <div class="space-y-2">
+            <div class="w-full h-32 rounded-xl overflow-hidden border border-emerald-700">
+              <img src="keluarga_picnic.jpg" alt="Foto Keluarga Referensi Pengguna" class="w-full h-full object-cover">
             </div>
-          </div>
-        </div>
-
-        <div class="hidden lg:block absolute bottom-10 right-28 bg-white p-3.5 rounded-2xl shadow-md border border-[#EAE6DC] max-w-xs">
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-amber-100 text-amber-800 flex items-center justify-center font-bold">
-              <i class="fa-solid fa-clipboard-check"></i>
-            </div>
-            <div>
-              <p class="text-xs text-brand-muted font-medium">Evaluasi Interaktif</p>
-              <p class="text-sm font-bold text-brand-dark">60 Soal Tadrib (30 + 30)</p>
+            <div class="flex items-center gap-2">
+              <i class="fa-solid fa-circle-check text-emerald-600 text-xs"></i>
+              <span class="text-xs font-bold text-brand-dark">Foto Referensi Keluarga Islami</span>
             </div>
           </div>
         </div>
@@ -257,7 +247,7 @@
           </div>
 
           <p class="text-base sm:text-lg text-brand-muted leading-relaxed pt-2">
-            Kuasai <strong>60 Mufradat Kosakata Foto Nyata Orang Arab</strong>, pelajari <strong>3 Percakapan Hiwar Mendalam</strong> beserta diagram Pohon Keluarga Rasulullah ﷺ, dan uji pemahamanmu melalui <strong>60 Tadrib Latihan Soal</strong> (30 Mufradat + 30 Hiwar).
+            Kuasai <strong>60 Mufradat Kosakata</strong> dengan foto referensi nyata keluarga Islami (Kakek, Nenek, Ayah, Ibu, Anak, Cucu), pelajari <strong>3 Percakapan Hiwar Mendalam</strong> beserta diagram Pohon Keluarga Rasulullah ﷺ, dan uji pemahamanmu melalui <strong>60 Tadrib Latihan Soal</strong> (30 Mufradat + 30 Hiwar).
           </p>
 
           <!-- Hero Action Buttons -->
@@ -282,8 +272,8 @@
             <i class="fa-solid fa-image text-brand-dark"></i>
           </div>
           <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Modul 1</span>
-          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Mufradat Foto Asli Orang Arab</h3>
-          <p class="text-sm text-brand-muted leading-relaxed">20 Kosakata Anggota Keluarga, 20 Profesi, dan 20 Benda & Ruangan Rumah dengan Foto Nyata Orang Arab & Audio.</p>
+          <h3 class="text-xl font-bold text-brand-dark mt-1 mb-2 group-hover:text-emerald-800">60 Mufradat Foto Referensi Keluarga</h3>
+          <p class="text-sm text-brand-muted leading-relaxed">20 Kosakata Anggota Keluarga berbasis foto referensi nyata, 20 Profesi, dan 20 Benda & Rumah beserta Audio.</p>
           <div class="mt-4 flex items-center text-xs font-bold text-brand-dark gap-1">
             Pelajari Sekarang <i class="fa-solid fa-chevron-right text-[10px]"></i>
           </div>
@@ -320,7 +310,7 @@
     </section>
 
 
-    <!-- ==================== TAB 2: MUFRADAT (60 KOSAKATA FOTO NYATA ORANG ARAB) ==================== -->
+    <!-- ==================== TAB 2: MUFRADAT (60 KOSAKATA FOTO REFERENSI KELUARGA) ==================== -->
     <section id="tab-mufradat" class="tab-content hidden fade-in space-y-8">
       
       <!-- Section Header -->
@@ -328,9 +318,9 @@
         <div>
           <span class="text-xs font-bold text-brand-dark uppercase tracking-wider">Modul Pembelajaran Visual Nyata</span>
           <h2 class="text-2xl font-bold text-brand-dark font-arabic flex items-center gap-2">
-            المَفْرُدَات الْمُصَوَّرَة <span class="text-base font-normal font-sans text-brand-muted">(60 Kosakata Foto Asli Orang Arab & Rumah Arab)</span>
+            المَفْرُدَات الْمُصَوَّرَة <span class="text-base font-normal font-sans text-brand-muted">(60 Kosakata Foto Referensi Keluarga Islami)</span>
           </h2>
-          <p class="text-xs text-brand-muted mt-1">Foto nyata masyarakat Arab berpakaian tradisional (Ghutra/Keffiyeh & Hijab/Abaya) serta audio <i class="fa-solid fa-volume-high text-brand-dark"></i>.</p>
+          <p class="text-xs text-brand-muted mt-1">Seluruh mufradat keluarga menggunakan foto referensi nyata keluarga Islami (Kakek, Nenek, Ayah, Ibu, Anak, Cucu) serta audio <i class="fa-solid fa-volume-high text-brand-dark"></i>.</p>
         </div>
 
         <!-- Filter Categories & Memory Mode Toggle -->
@@ -347,7 +337,7 @@
         </div>
       </div>
 
-      <!-- 60 Mufradat Grid Cards with REAL PHOTOS OF ARAB PEOPLE -->
+      <!-- 60 Mufradat Grid Cards with REAL FAMILY REFERENCE PHOTO -->
       <div id="mufradat-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
         <!-- Javascript will populate 60 visual cards dynamically -->
       </div>
@@ -396,9 +386,15 @@
       <!-- HIWAR 1 CONTAINER -->
       <div id="hiwar-content-1" class="hiwar-view space-y-6">
         <div class="bg-white p-6 sm:p-8 rounded-2xl border border-[#E8E4D9] shadow-soft space-y-6">
-          <div class="border-b border-[#E8E4D9] pb-4">
-            <h3 class="text-xl font-bold text-brand-dark">Hiwar 1: صُورَةُ أُسْرَتِي (Foto Keluargaku)</h3>
-            <p class="text-xs text-brand-muted mt-1">Percakapan mendalam antara Ali (عَلِيّ) dan Ammar (عَمَّار) menceritakan album foto keluarga, kakek-nenek, orang tua, saudara, dan ucapan doa kebaikan.</p>
+          <div class="border-b border-[#E8E4D9] pb-4 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+              <h3 class="text-xl font-bold text-brand-dark">Hiwar 1: صُورَةُ أُسْرَتِي (Foto Keluargaku)</h3>
+              <p class="text-xs text-brand-muted mt-1">Percakapan mendalam antara Ali (عَلِيّ) dan Ammar (عَمَّار) menceritakan album foto keluarga, kakek-nenek, orang tua, saudara, dan ucapan doa kebaikan.</p>
+            </div>
+            <!-- Embedded Reference Photo -->
+            <div class="w-full md:w-64 h-36 rounded-2xl overflow-hidden border-2 border-emerald-700 shadow-md flex-shrink-0">
+              <img src="keluarga_picnic.jpg" alt="Foto Album Keluarga Ali" class="w-full h-full object-cover">
+            </div>
           </div>
 
           <!-- Dialogue Lines -->
@@ -596,7 +592,7 @@
       </div>
 
       <p class="text-xs text-brand-muted max-w-xl mx-auto leading-relaxed">
-        Modul Lengkap: 60 Mufradat Bergambar Foto Asli Orang Arab (Ghutra, Keffiyeh & Hijab/Abaya), 3 Hiwar Percakapan Mendalam dengan Silsilah Rasulullah ﷺ, dan 60 Latihan Soal Interaktif (30 Mufradat + 30 Hiwar).
+        Modul Lengkap: 60 Mufradat Bergambar Foto Referensi Keluarga Islami, 3 Hiwar Percakapan Mendalam dengan Silsilah Rasulullah ﷺ, dan 60 Latihan Soal Interaktif (30 Mufradat + 30 Hiwar).
       </p>
     </div>
   </footer>
@@ -604,31 +600,31 @@
 
   <!-- SCRIPT LOGIC -->
   <script>
-    // ==================== 1. DATA 60 MUFRADAT WITH REAL PHOTOS OF ARAB PEOPLE ====================
+    // ==================== 1. DATA 60 MUFRADAT WITH USER REFERENCE PHOTO CROPS ====================
     const mufradatData = [
-      // --- TEMA 1: KELUARGA (20 ITEMS - REAL PHOTOS OF ARAB PEOPLE) ---
-      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "https://images.unsplash.com/photo-1543269865-cbf427effbad?auto=format&fit=crop&w=600&q=80" },
-      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=600&q=80" },
-      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "https://images.unsplash.com/photo-1566492031773-4f4e44671857?auto=format&fit=crop&w=600&q=80" }, // Real elderly Arab man in Ghutra
-      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=600&q=80" }, // Real elderly Arab woman
-      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=600&q=80" }, // Real Arab father in white Thobe/Kandura
-      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?auto=format&fit=crop&w=600&q=80" }, // Real Arab mother in Hijab
-      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" }, // Real Arab young man
-      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=600&q=80" }, // Real Arab sister in Hijab
-      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child", img: "https://images.unsplash.com/photo-1485546246426-74dc88dec4d9?auto=format&fit=crop&w=600&q=80" }, // Real Arab boy
-      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress", img: "https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=600&q=80" }, // Real Arab girl
-      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" }, // Real Arab uncle
-      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" }, // Real Arab aunt in Hijab
-      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user", img: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=600&q=80" },
-      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse", img: "https://images.unsplash.com/photo-1567532939604-b6b5b0db2604?auto=format&fit=crop&w=600&q=80" },
-      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" },
-      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" },
-      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child", img: "https://images.unsplash.com/photo-1502086223501-7ea6ecd79368?auto=format&fit=crop&w=600&q=80" },
-      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching", img: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=600&q=80" },
-      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof", img: "https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=600&q=80" },
-      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah Keluarga", category: "keluarga", icon: "fa-house", img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&q=80" },
+      // --- TEMA 1: KELUARGA (20 ITEMS - BASED ON USER'S UPLOADED FAMILY PICNIC PHOTO) ---
+      { id: 1, arabic: "أُسْرَة", latin: "Usrah", indo: "Keluarga", category: "keluarga", icon: "fa-users", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: center;" },
+      { id: 2, arabic: "شَجَرَةُ الأُسْرَةِ", latin: "Shajaratul 'Usrah", indo: "Pohon Keluarga", category: "keluarga", icon: "fa-sitemap", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: center;" },
+      { id: 3, arabic: "جَدّ", latin: "Jadd", indo: "Kakek", category: "keluarga", icon: "fa-user-tie", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 18% 30%; transform: scale(2.2);" }, // Kakek on left
+      { id: 4, arabic: "جَدَّة", latin: "Jaddah", indo: "Nenek", category: "keluarga", icon: "fa-person-breastfeeding", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 85% 35%; transform: scale(2.2);" }, // Nenek on right in teal hijab
+      { id: 5, arabic: "وَالِد / أَب", latin: "Walid / Ab", indo: "Ayah", category: "keluarga", icon: "fa-user-large", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 43% 30%; transform: scale(2.5);" }, // Ayah in middle-left
+      { id: 6, arabic: "وَالِدَة / أُمّ", latin: "Walidah / Umm", indo: "Ibu", category: "keluarga", icon: "fa-user", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 63% 30%; transform: scale(2.5);" }, // Ibu in maroon hijab & glasses
+      { id: 7, arabic: "أَخ", latin: "Akh", indo: "Saudara Laki-laki", category: "keluarga", icon: "fa-person", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 52% 48%; transform: scale(2.5);" }, // Boy in blue shirt
+      { id: 8, arabic: "أُخْت", latin: "Ukht", indo: "Saudari Perempuan", category: "keluarga", icon: "fa-person-dress", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 32% 48%; transform: scale(2.5);" }, // Girl in pink hijab
+      { id: 9, arabic: "ابْن", latin: "Ibn", indo: "Anak Laki-laki", category: "keluarga", icon: "fa-child", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 52% 48%; transform: scale(2.5);" }, // Boy in blue shirt
+      { id: 10, arabic: "ابْنَة", latin: "Ibnah", indo: "Anak Perempuan", category: "keluarga", icon: "fa-child-dress", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 32% 48%; transform: scale(2.5);" }, // Girl in pink hijab
+      { id: 11, arabic: "عَمّ", latin: "'Amm", indo: "Paman (dari Ayah)", category: "keluarga", icon: "fa-user-nurse", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 43% 30%; transform: scale(2.2);" },
+      { id: 12, arabic: "عَمَّة", latin: "'Ammah", indo: "Bibi (dari Ayah)", category: "keluarga", icon: "fa-user-doctor", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 63% 30%; transform: scale(2.2);" },
+      { id: 13, arabic: "خَال", latin: "Khaal", indo: "Paman (dari Ibu)", category: "keluarga", icon: "fa-user", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 43% 30%; transform: scale(2.2);" },
+      { id: 14, arabic: "خَالَة", latin: "Khaalah", indo: "Bibi (dari Ibu)", category: "keluarga", icon: "fa-user-nurse", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 63% 30%; transform: scale(2.2);" },
+      { id: 15, arabic: "زَوْج", latin: "Zawj", indo: "Suami", category: "keluarga", icon: "fa-user-group", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 43% 30%; transform: scale(2.5);" },
+      { id: 16, arabic: "زَوْجَة", latin: "Zawjah", indo: "Istri", category: "keluarga", icon: "fa-heart", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 63% 30%; transform: scale(2.5);" },
+      { id: 17, arabic: "حَفِيد", latin: "Hafid", indo: "Cucu Laki-laki", category: "keluarga", icon: "fa-hands-holding-child", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 68% 55%; transform: scale(2.5);" }, // Toddler in yellow shirt
+      { id: 18, arabic: "حَفِيدَة", latin: "Hafidah", indo: "Cucu Perempuan", category: "keluarga", icon: "fa-child-reaching", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: 32% 48%; transform: scale(2.5);" },
+      { id: 19, arabic: "أَقَارِب", latin: "Aqaarib", indo: "Sanak Kerabat", category: "keluarga", icon: "fa-people-roof", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: center;" },
+      { id: 20, arabic: "بَيْتُ الأُسْرَةِ", latin: "Baytul 'Usrah", indo: "Rumah / Taman Keluarga", category: "keluarga", icon: "fa-house", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: center;" },
 
-      // --- TEMA 2: PROFESI (20 ITEMS - REAL PHOTOS OF ARAB PROFESSIONALS) ---
+      // --- TEMA 2: PROFESI (20 ITEMS) ---
       { id: 21, arabic: "مُهَنْدِس", latin: "Muhandis", indo: "Insinyur (Laki-laki)", category: "profesi", icon: "fa-compass-drafting", img: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&w=600&q=80" },
       { id: 22, arabic: "مُهَنْدِسَة", latin: "Muhandisah", indo: "Insinyur (Perempuan)", category: "profesi", icon: "fa-drafting-compass", img: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?auto=format&fit=crop&w=600&q=80" },
       { id: 23, arabic: "طَبِيب", latin: "Thabib", indo: "Dokter (Laki-laki)", category: "profesi", icon: "fa-user-doctor", img: "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80" },
@@ -650,8 +646,8 @@
       { id: 39, arabic: "مُمَرِّضَة", latin: "Mumarrizhah", indo: "Perawat (Perempuan)", category: "profesi", icon: "fa-kit-medical", img: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=600&q=80" },
       { id: 40, arabic: "مَدِير", latin: "Madiir", indo: "Kepala Sekolah / Direktur", category: "profesi", icon: "fa-user-gear", img: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&w=600&q=80" },
 
-      // --- TEMA 3: BENDA & RUMAH (20 ITEMS - REAL PHOTOS) ---
-      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image", img: "https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?auto=format&fit=crop&w=600&q=80" },
+      // --- TEMA 3: BENDA & RUMAH (20 ITEMS) ---
+      { id: 41, arabic: "صُورَة", latin: "Shurah", indo: "Foto / Gambar", category: "benda", icon: "fa-image", img: "keluarga_picnic.jpg", imgStyle: "object-fit: cover; object-position: center;" },
       { id: 42, arabic: "مِعْطَف", latin: "Mi'thaf", indo: "Jas / Mantel", category: "benda", icon: "fa-vest", img: "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?auto=format&fit=crop&w=600&q=80" },
       { id: 43, arabic: "نَظَّارَة", latin: "Naththarah", indo: "Kacamata", category: "benda", icon: "fa-glasses", img: "https://images.unsplash.com/photo-1572635196237-14b3f281503f?auto=format&fit=crop&w=600&q=80" },
       { id: 44, arabic: "غُرْفَة", latin: "Ghurfah", indo: "Kamar Tidur", category: "benda", icon: "fa-bed", img: "https://images.unsplash.com/photo-1540518614846-7ede433c5163?auto=format&fit=crop&w=600&q=80" },
@@ -876,7 +872,7 @@
       }
     }
 
-    // ==================== MUFRADAT RENDER (REAL PHOTOS OF ARAB PEOPLE) ====================
+    // ==================== MUFRADAT RENDER (WITH USER REFERENCE CROPS) ====================
     function renderMufradatGrid() {
       const grid = document.getElementById("mufradat-grid");
       grid.innerHTML = "";
@@ -897,11 +893,11 @@
               </button>
             </div>
             
-            <!-- REAL ARAB PHOTO CONTAINER -->
+            <!-- PHOTO CONTAINER WITH DYNAMIC OBJECT-POSITION & SCALE -->
             <div class="w-full h-44 rounded-xl overflow-hidden bg-[#F2EFE8] mb-3.5 border border-[#DCD6C8] relative shadow-inner flex items-center justify-center group-hover:border-emerald-600 transition-colors">
-              <img src="${item.img}" alt="${item.indo}" loading="lazy" 
+              <img src="${item.img}" alt="${item.indo}" loading="lazy" style="${item.imgStyle || 'object-fit: cover;'}" 
                 onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'w-full h-full bg-gradient-to-br from-emerald-800 to-teal-900 text-white flex flex-col items-center justify-center p-3 text-center space-y-1.5\'><i class=\'fa-solid ${item.icon} text-3xl text-amber-300\'></i><span class=\'text-xs font-bold font-sans\'>${item.indo}</span></div>';" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                class="w-full h-full transition-transform duration-300">
             </div>
 
             <!-- ARABIC & TRANSLITERATION -->
