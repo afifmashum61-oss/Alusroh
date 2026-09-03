@@ -924,7 +924,12 @@
           card.classList.toggle("is-flipped");
         };
 
-        const imgPosClass = (item.id === 11 || item.id === 12 || item.id === 18 || item.id === 23 || item.id === 24) ? "object-top" : "object-center";
+        let objectPos = "center center";
+        if (item.id === 18) {
+          objectPos = "center 22%";
+        } else if (item.id === 11 || item.id === 12 || item.id === 23 || item.id === 24) {
+          objectPos = "center top";
+        }
 
         card.innerHTML = `
           <div class="flip-card-inner relative w-full h-full">
@@ -946,7 +951,8 @@
                 <div class="w-full h-44 rounded-xl overflow-hidden bg-[#F6F3EC] mb-3 border border-[#DCD6C8] relative shadow-2xs flex items-center justify-center p-1.5">
                   <img src="${item.img}" alt="${item.indo}" loading="lazy" 
                     onerror="handleImgError(this, ${item.id})" 
-                    class="w-full h-full object-cover ${imgPosClass} rounded-lg group-hover:scale-105 transition-all duration-300">
+                    style="object-position: ${objectPos};"
+                    class="w-full h-full object-cover rounded-lg group-hover:scale-105 transition-all duration-300">
                 </div>
 
                 <!-- ARABIC -->
