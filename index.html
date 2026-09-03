@@ -338,13 +338,8 @@
           <p class="text-xs text-brand-muted mt-1">Klik kotak kartu untuk membalik dan mempelajari contoh kalimat bahasa Arab lengkap beserta audio <i class="fa-solid fa-volume-high text-brand-dark"></i>.</p>
         </div>
 
-        <!-- Filter Categories & Memory Mode Toggle -->
+        <!-- Filter Categories -->
         <div class="flex flex-wrap items-center gap-2">
-          <!-- Toggle Sembunyikan Teks Arti untuk Uji Memori -->
-          <button id="toggle-indo-btn" onclick="toggleIndoText()" class="px-3.5 py-2 rounded-full text-xs font-bold bg-amber-50 text-amber-900 border border-amber-200 hover:bg-amber-100 transition-all flex items-center gap-1.5">
-            <i class="fa-solid fa-eye-slash"></i> <span>Sembunyikan Arti (Uji Hafalan)</span>
-          </button>
-
           <button id="filter-all-btn" onclick="filterMufradat('all')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-brand-dark text-white">Semua (60)</button>
           <button id="filter-keluarga-btn" onclick="filterMufradat('keluarga')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Keluarga (20)</button>
           <button id="filter-profesi-btn" onclick="filterMufradat('profesi')" class="mufradat-filter-btn px-4 py-2 rounded-full text-xs font-bold bg-[#EFECE4] text-brand-muted hover:bg-brand-light-green">Profesi (20)</button>
@@ -957,12 +952,9 @@
                 </div>
               </div>
 
-              <!-- INDONESIAN TRANSLATION & FLIP HINT -->
-              <div class="pt-2 border-t border-[#F0ECE1] flex items-center justify-between text-xs">
-                <span class="mufradat-indo-text font-bold text-brand-dark ${isIndoHidden ? 'blur-xs select-none opacity-40' : ''}">
-                  ${item.indo}
-                </span>
-                <span class="text-[10px] text-amber-800 bg-amber-50 px-2 py-0.5 rounded-full font-semibold border border-amber-200 shadow-2xs">
+              <!-- FLIP HINT -->
+              <div class="pt-2 border-t border-[#F0ECE1] flex items-center justify-center text-xs">
+                <span class="text-[10px] text-amber-800 bg-amber-50 px-3 py-1 rounded-full font-semibold border border-amber-200 shadow-2xs">
                   <i class="fa-solid fa-rotate mr-1"></i> Klik untuk Contoh
                 </span>
               </div>
